@@ -112,12 +112,6 @@ html[dir="rtl"] body {
   letter-spacing: 0;
 }
 
-html[dir="rtl"] .brand-text strong,
-html[dir="rtl"] .eyebrow {
-  letter-spacing: 0.05em;
-  text-transform: none;
-}
-
 html[dir="rtl"] #contact {
   direction: ltr;
   text-align: left;
@@ -353,10 +347,6 @@ main {
   box-shadow: var(--focus-ring);
 }
 
-.mobile-nav .btn {
-  margin-top: 1rem;
-}
-
 .mobile-menu-overlay {
   display: none;
   position: fixed;
@@ -474,6 +464,10 @@ html[dir="rtl"] .mobile-menu.open {
   padding: 0.55rem 1.2rem;
   font-size: 0.85rem;
   white-space: nowrap;
+}
+
+.mobile-nav .btn {
+  margin-top: 1rem;
 }
 
 .locale-toggle {
@@ -976,6 +970,12 @@ html[dir="rtl"] .mobile-menu.open {
 .testimonial-author-info span {
   font-size: 0.85rem;
   color: var(--ink-faint);
+}
+
+html[dir="rtl"] .brand-text strong,
+html[dir="rtl"] .eyebrow {
+  letter-spacing: 0.05em;
+  text-transform: none;
 }
 
 /* Team Section */
