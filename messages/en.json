@@ -28,7 +28,7 @@
     "subtitle": "Raha Cloud helps teams reduce costs around maintaining and controlling infrastructure with DevOps solutions built on AWS, Hetzner, and Arvancloud.",
     "ctaPrimary": "Let's build together",
     "ctaSecondary": "See services",
-    "note": "Based in Istanbul, Turkey + Remote",
+    "note": "Offices in Tehran & Istanbul — serving clients worldwide",
     "pillarsTitle": "Cloud Partners",
     "pillars": [
       {
@@ -42,6 +42,10 @@
       {
         "title": "Arvancloud",
         "desc": "Regional CDN, cloud, and edge services for MENA."
+      },
+      {
+        "title": "Hamravesh",
+        "desc": "Iranian managed Kubernetes and PaaS infrastructure."
       }
     ]
   },
@@ -184,9 +188,25 @@
     "phone": "+98 935 225 7378",
     "whatsapp": "+989352257378",
     "telegram": "+989352257378",
-    "address": "Istanbul, Turkey - Remote-first engagements worldwide",
+    "address": "Tehran & Istanbul — serving clients worldwide",
     "hours": "Monday-Friday, 9:00-18:00 TRT",
     "cta": "Schedule a call",
+    "offices": [
+      {
+        "label": "Tehran Office",
+        "city": "Tehran, Iran",
+        "district": "Tohid",
+        "registrationNumber": "668767",
+        "nationalId": "14015174107",
+        "phone": "+982166572481",
+        "phoneDisplay": "+98 21 6657 2481"
+      },
+      {
+        "label": "Istanbul Office",
+        "city": "Istanbul, Türkiye",
+        "district": "Şişli"
+      }
+    ],
     "labels": {
       "email": "Email",
       "phone": "Phone",
@@ -194,6 +214,10 @@
       "telegram": "Telegram",
       "github": "GitHub",
       "location": "Location",
+      "offices": "Offices",
+      "district": "District",
+      "registrationNumber": "Registration No.",
+      "nationalId": "National ID",
       "hours": "Hours"
     }
   },

@@ -1,3 +1,14 @@
+type PostalAddress = {
+  district?: string;
+  city: string;
+  country: string;
+};
+
+type Identifiers = {
+  registrationNumber?: string;
+  nationalId?: string;
+};
+
 type OrganizationData = {
   name: string;
   description: string;
@@ -5,10 +16,8 @@ type OrganizationData = {
   logo: string;
   email: string;
   telephone: string;
-  address: {
-    city: string;
-    country: string;
-  };
+  addresses: PostalAddress[];
+  identifiers?: Identifiers;
   sameAs: string[];
 };
 
@@ -23,6 +32,36 @@ type Props = {
 };
 
 export default function StructuredData({ organization, services }: Props) {
+  const postalAddresses = organization.addresses.map((addr) => ({
+    '@type': 'PostalAddress',
+    ...(addr.district ? { streetAddress: addr.district } : {}),
+    addressLocality: addr.city,
+    addressCountry: addr.country,
+  }));
+
+  const identifierList = [
+    organization.identifiers?.registrationNumber && {
+      '@type': 'PropertyValue',
+      propertyID: 'Iran Company Registration Number',
+      value: organization.identifiers.registrationNumber,
+    },
+    organization.identifiers?.nationalId && {
+      '@type': 'PropertyValue',
+      propertyID: 'Iran National ID',
+      value: organization.identifiers.nationalId,
+    },
+  ].filter(Boolean);
+
+  const identifierFields =
+    identifierList.length > 0
+      ? {
+          identifier: identifierList,
+          ...(organization.identifiers?.nationalId
+            ? { taxID: organization.identifiers.nationalId }
+            : {}),
+        }
+      : {};
+
   const orgSchema = {
     '@context': 'https://schema.org',
     '@type': 'Organization',
@@ -32,11 +71,8 @@ export default function StructuredData({ organization, services }: Props) {
     logo: organization.logo,
     email: organization.email,
     telephone: organization.telephone,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: organization.address.city,
-      addressCountry: organization.address.country,
-    },
+    address: postalAddresses,
+    ...identifierFields,
     sameAs: organization.sameAs,
   };
 
@@ -49,11 +85,8 @@ export default function StructuredData({ organization, services }: Props) {
     logo: organization.logo,
     email: organization.email,
     telephone: organization.telephone,
-    address: {
-      '@type': 'PostalAddress',
-      addressLocality: organization.address.city,
-      addressCountry: organization.address.country,
-    },
+    address: postalAddresses,
+    ...identifierFields,
     priceRange: '$$',
     openingHours: 'Mo-Fr 09:00-18:00',
   };

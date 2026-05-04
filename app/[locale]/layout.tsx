@@ -8,14 +8,10 @@ import StructuredData from '@/components/StructuredData';
 import { routing } from '@/i18n/routing';
 
 // Local fonts
-import '@fontsource/inter/400.css';
-import '@fontsource/inter/500.css';
-import '@fontsource/inter/600.css';
-import '@fontsource/inter/700.css';
-import '@fontsource/space-grotesk/400.css';
-import '@fontsource/space-grotesk/500.css';
-import '@fontsource/space-grotesk/600.css';
-import '@fontsource/space-grotesk/700.css';
+import '@fontsource-variable/fraunces/opsz.css';
+import '@fontsource-variable/fraunces/opsz-italic.css';
+import '@fontsource-variable/geist/index.css';
+import '@fontsource-variable/geist-mono/index.css';
 import 'vazirmatn/Vazirmatn-font-face.css';
 
 import '@/app/globals.css';
@@ -83,9 +79,21 @@ const organizationData = {
   logo: 'https://rahacloud.github.io/logo.png',
   email: 'elahe.dstn@gmail.com',
   telephone: '+98 935 225 7378',
-  address: {
-    city: 'Istanbul',
-    country: 'Turkey',
+  addresses: [
+    {
+      district: 'Tohid',
+      city: 'Tehran',
+      country: 'Iran',
+    },
+    {
+      district: 'Şişli',
+      city: 'Istanbul',
+      country: 'Türkiye',
+    },
+  ],
+  identifiers: {
+    registrationNumber: '668767',
+    nationalId: '14015174107',
   },
   sameAs: ['https://github.com/rahacloud'],
 };

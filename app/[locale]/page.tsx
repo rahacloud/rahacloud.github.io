@@ -15,13 +15,6 @@ import {
 import SiteFooter from '@/components/SiteFooter';
 import SiteHeader from '@/components/SiteHeader';
 
-const cloudLogos: Record<string, string> = {
-  AWS: '/logos/aws.svg',
-  Hetzner: '/logos/hetzner.svg',
-  Arvancloud: '/logos/arvancloud.svg',
-  ابرآروان: '/logos/arvancloud.svg',
-};
-
 type Pillar = {
   title: string;
   desc: string;
@@ -47,6 +40,16 @@ type Project = {
   title: string;
   desc: string;
   result: string;
+};
+
+type Office = {
+  label: string;
+  city: string;
+  district?: string;
+  registrationNumber?: string;
+  nationalId?: string;
+  phone?: string;
+  phoneDisplay?: string;
 };
 
 type TeamMember = {
@@ -78,6 +81,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
   const processSteps = t.raw('process.steps') as Step[];
   const projects = t.raw('projects.items') as Project[];
   const teamMembers = t.raw('team.members') as TeamMember[];
+  const offices = t.raw('contact.offices') as Office[];
 
   return (
     <div className="page" id="home">
@@ -108,69 +112,77 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 {t('hero.note')}
               </p>
             </div>
-            <div className="hero-card reveal" style={{ '--delay': '0.2s' } as React.CSSProperties}>
-              <div className="card-label">{t('hero.pillarsTitle')}</div>
-              {heroPillars.map((pillar) => (
-                <div key={pillar.title} className="pillar">
-                  <div className="pillar-logo">
-                    {cloudLogos[pillar.title] && (
-                      <Image
-                        src={cloudLogos[pillar.title]}
-                        alt={`${pillar.title} logo`}
-                        width={80}
-                        height={32}
-                        unoptimized
-                      />
-                    )}
+            <div
+              className="hero-panel reveal"
+              style={{ '--delay': '0.2s' } as React.CSSProperties}
+              aria-hidden="true"
+            >
+              <div className="hero-panel-header">
+                <span className="hero-panel-dots">
+                  <span />
+                  <span />
+                  <span />
+                </span>
+                <span className="hero-panel-host">raha@cloud ~ %</span>
+              </div>
+              <div className="hero-panel-rows">
+                <div className="hero-panel-row">
+                  <span className="meta">$</span>
+                  <span className="name">raha health --all</span>
+                  <span className="meta" />
+                </div>
+                {heroPillars.map((pillar) => (
+                  <div key={pillar.title} className="hero-panel-row">
+                    <span className="dot" />
+                    <span className="name">
+                      <b>{pillar.title.toLowerCase()}</b>
+                    </span>
+                    <span className="meta">operational</span>
                   </div>
-                  <div>
-                    <h3>{pillar.title}</h3>
-                    <p className="section-subtitle">{pillar.desc}</p>
-                  </div>
+                ))}
+              </div>
+              <div className="hero-panel-foot">
+                <span>
+                  <strong>{heroPillars.length}/{heroPillars.length}</strong> healthy
+                </span>
+                <span>
+                  uptime · 99.9
+                  <span className="cursor" />
+                </span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <section className="stats-band">
+          <div className="container">
+            <div className="stats-grid">
+              {stats.map((stat, index) => (
+                <div
+                  key={stat.label}
+                  className="stat reveal"
+                  style={{ '--delay': `${index * 0.08}s` } as React.CSSProperties}
+                >
+                  <div className="stat-value">{stat.value}</div>
+                  <div className="stat-label">{stat.label}</div>
                 </div>
               ))}
             </div>
           </div>
         </section>
 
-        <section className="section">
-          <div className="container stats-grid">
-            {stats.map((stat, index) => (
-              <div
-                key={stat.label}
-                className="stat-card reveal"
-                style={{ '--delay': `${index * 0.1}s` } as React.CSSProperties}
-              >
-                <div className="stat-value">{stat.value}</div>
-                <div className="section-subtitle">{stat.label}</div>
-              </div>
-            ))}
-          </div>
-        </section>
-
-        <section id="about" className="section section-alt">
+        <section id="about" className="section">
           <div className="container about-grid">
-            <div>
-              <div className="section-header">
-                <span className="eyebrow">{t('nav.about')}</span>
-                <h2 className="section-title">{t('about.title')}</h2>
-                <p className="section-subtitle">{t('about.body')}</p>
-              </div>
-              <ul className="about-list">
-                {aboutHighlights.map((highlight) => (
-                  <li key={highlight}>{highlight}</li>
-                ))}
-              </ul>
+            <div className="section-header">
+              <span className="eyebrow">{t('nav.about')}</span>
+              <h2 className="section-title">{t('about.title')}</h2>
+              <p className="section-subtitle">{t('about.body')}</p>
             </div>
-            <div className="about-card">
-              <h3>{t('services.title')}</h3>
-              <p className="section-subtitle">{t('services.subtitle')}</p>
-              <div className="tag-list" style={{ marginTop: '1.4rem' }}>
-                <span className="tag">{t('services.items.0.tags.0')}</span>
-                <span className="tag">{t('services.items.1.tags.1')}</span>
-                <span className="tag">{t('services.items.2.tags.2')}</span>
-              </div>
-            </div>
+            <ul className="about-list">
+              {aboutHighlights.map((highlight) => (
+                <li key={highlight}>{highlight}</li>
+              ))}
+            </ul>
           </div>
         </section>
 
@@ -199,7 +211,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
           </div>
         </section>
 
-        <section id="process" className="section section-alt">
+        <section id="process" className="section process-section">
           <div className="container">
             <div className="section-header">
               <span className="eyebrow">{t('nav.process')}</span>
@@ -208,9 +220,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
             <div className="process-grid">
               {processSteps.map((step, index) => (
                 <div key={step.title} className="process-step">
-                  <span>{index + 1}</span>
+                  <span>{String(index + 1).padStart(2, '0')}</span>
                   <h3>{step.title}</h3>
-                  <p className="section-subtitle">{step.desc}</p>
+                  <p>{step.desc}</p>
                 </div>
               ))}
             </div>
@@ -238,7 +250,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <section className="section section-alt">
           <div className="container">
             <div className="section-header">
-              <span className="eyebrow">{t('clients.title')}</span>
+              <span className="eyebrow">{t('nav.projects')}</span>
               <h2 className="section-title">{t('clients.title')}</h2>
             </div>
             <div className="squad-grid">
@@ -283,7 +295,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   alt={t('clients.aveehealth')}
                   width={64}
                   height={64}
-                  className="squad-logo"
+                  className="squad-logo squad-logo--padded"
                 />
                 <span className="squad-name">{t('clients.aveehealth')}</span>
               </a>
@@ -294,7 +306,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
         <section id="team" className="section">
           <div className="container">
             <div className="section-header">
-              <span className="eyebrow">{t('team.title')}</span>
+              <span className="eyebrow">{t('nav.team')}</span>
               <h2 className="section-title">{t('team.title')}</h2>
               <p className="section-subtitle">{t('team.subtitle')}</p>
             </div>
@@ -304,16 +316,17 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   <Image
                     src={member.photo ?? `https://github.com/${member.username}.png`}
                     alt={member.name}
-                    width={120}
-                    height={120}
+                    width={96}
+                    height={96}
                     className="team-photo"
                     style={member.photo ? { objectPosition: 'center 20%' } : undefined}
                     unoptimized
                   />
-                  <h3 className="team-name">{member.name}</h3>
-                  <span className="team-role">{member.role}</span>
-                  <p className="team-bio">{member.bio}</p>
-                  <div className="team-social">
+                  <div className="team-card-body">
+                    <h3 className="team-name">{member.name}</h3>
+                    <span className="team-role">{member.role}</span>
+                    <p className="team-bio">{member.bio}</p>
+                    <div className="team-social">
                     {member.social.github && (
                       <a
                         href={`https://github.com/${member.social.github}`}
@@ -374,6 +387,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                         <WebsiteIcon />
                       </a>
                     )}
+                    </div>
                   </div>
                 </div>
               ))}
@@ -435,9 +449,36 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 </a>
               </div>
               <div className="contact-item">
-                <strong>{t('contact.labels.location')}</strong>
+                <strong>{t('contact.labels.offices')}</strong>
                 <span>{t('contact.address')}</span>
               </div>
+              {offices.map((office) => (
+                <div key={office.label} className="contact-item office-item">
+                  <strong>{office.label}</strong>
+                  <span>{office.city}</span>
+                  {office.district && (
+                    <span className="office-meta">
+                      {t('contact.labels.district')}: {office.district}
+                    </span>
+                  )}
+                  {office.registrationNumber && (
+                    <span className="office-meta">
+                      {t('contact.labels.registrationNumber')}:{' '}
+                      <bdi>{office.registrationNumber}</bdi>
+                    </span>
+                  )}
+                  {office.nationalId && (
+                    <span className="office-meta">
+                      {t('contact.labels.nationalId')}: <bdi>{office.nationalId}</bdi>
+                    </span>
+                  )}
+                  {office.phone && office.phoneDisplay && (
+                    <a href={`tel:${office.phone}`}>
+                      <bdi>{office.phoneDisplay}</bdi>
+                    </a>
+                  )}
+                </div>
+              ))}
               <div className="contact-item">
                 <strong>{t('contact.labels.hours')}</strong>
                 <span>{t('contact.hours')}</span>

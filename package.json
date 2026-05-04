@@ -13,8 +13,9 @@
     "check:fix": "biome check --write ."
   },
   "dependencies": {
-    "@fontsource/inter": "^5.2.8",
-    "@fontsource/space-grotesk": "^5.2.10",
+    "@fontsource-variable/fraunces": "^5.2.9",
+    "@fontsource-variable/geist": "^5.2.8",
+    "@fontsource-variable/geist-mono": "^5.2.7",
     "gray-matter": "^4.0.3",
     "next": "^16.2.4",
     "next-intl": "^4.11.0",
