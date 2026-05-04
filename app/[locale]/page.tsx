@@ -136,6 +136,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     <span className="dot" />
                     <span className="name">
                       <b>{pillar.title.toLowerCase()}</b>
+                      <span className="tip" role="tooltip">
+                        {pillar.desc}
+                      </span>
                     </span>
                     <span className="meta">operational</span>
                   </div>
