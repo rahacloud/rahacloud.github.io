@@ -400,7 +400,9 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </div>
               <div className="contact-item">
                 <strong>{t('contact.labels.phone')}</strong>
-                <a href={`tel:${t('contact.phone')}`}>{t('contact.phone')}</a>
+                <a href={`tel:${t('contact.phone')}`}>
+                  <bdi>{t('contact.phone')}</bdi>
+                </a>
               </div>
               <div className="contact-item">
                 <strong>{t('contact.labels.whatsapp')}</strong>
@@ -410,7 +412,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   rel="noopener noreferrer"
                 >
                   <WhatsAppIcon />
-                  {t('contact.phone')}
+                  <bdi>{t('contact.phone')}</bdi>
                 </a>
               </div>
               <div className="contact-item">
@@ -421,7 +423,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   rel="noopener noreferrer"
                 >
                   <TelegramIcon />
-                  {t('contact.phone')}
+                  <bdi>{t('contact.phone')}</bdi>
                 </a>
               </div>
               <div className="contact-item">

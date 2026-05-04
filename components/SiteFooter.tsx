@@ -29,7 +29,9 @@ export default function SiteFooter() {
             <div className="footer-title">{t('nav.contact')}</div>
             <div className="footer-links">
               <a href={`mailto:${t('contact.email')}`}>{t('contact.email')}</a>
-              <a href={`tel:${t('contact.phone')}`}>{t('contact.phone')}</a>
+              <a href={`tel:${t('contact.phone')}`}>
+                <bdi>{t('contact.phone')}</bdi>
+              </a>
               <span>{t('contact.hours')}</span>
             </div>
           </div>
