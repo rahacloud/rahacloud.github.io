@@ -307,6 +307,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     width={120}
                     height={120}
                     className="team-photo"
+                    style={member.photo ? { objectPosition: 'center 20%' } : undefined}
                     unoptimized
                   />
                   <h3 className="team-name">{member.name}</h3>
