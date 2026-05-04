@@ -1,14 +1,18 @@
 'use client';
 
 import Image from 'next/image';
-import { useTranslations } from 'next-intl';
+import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';
+import { Link } from '@/i18n/routing';
 import { CloseIcon, MenuIcon } from './icons';
 import LocaleToggle from './LocaleToggle';
 import ThemeToggle from './ThemeToggle';
 
+type NavLink = { href: string; label: string; locale?: boolean };
+
 export default function SiteHeader() {
   const t = useTranslations();
+  const locale = useLocale();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
@@ -35,22 +39,42 @@ export default function SiteHeader() {
     };
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setMobileMenuOpen(false);
+    };
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [mobileMenuOpen]);
+
   const closeMenu = () => setMobileMenuOpen(false);
 
-  const navLinks = [
+  const navLinks: NavLink[] = [
     { href: '#about', label: t('nav.about') },
     { href: '#services', label: t('nav.services') },
     { href: '#process', label: t('nav.process') },
     { href: '#projects', label: t('nav.projects') },
     { href: '#team', label: t('nav.team') },
     { href: '#contact', label: t('nav.contact') },
-    { href: '/en/blog', label: 'Blog' },
+    { href: '/blog', label: t('nav.blog'), locale: true },
   ];
+
+  const renderNavLink = (link: NavLink, onClick?: () => void) =>
+    link.locale ? (
+      <Link key={link.href} href={link.href} onClick={onClick}>
+        {link.label}
+      </Link>
+    ) : (
+      <a key={link.href} href={link.href} onClick={onClick}>
+        {link.label}
+      </a>
+    );
 
   return (
     <header className={`site-header ${scrolled ? 'scrolled' : ''}`}>
       <div className="container header-inner">
-        <a className="brand" href="#home">
+        <a className="brand" href={`/${locale}`}>
           <Image src="/logo.png" alt="Raha Cloud" width={44} height={44} className="brand-mark" />
           <span className="brand-text">
             <strong>{t('brand.name')}</strong>
@@ -59,11 +83,7 @@ export default function SiteHeader() {
         </a>
 
         <nav className="nav nav-desktop" aria-label="Primary">
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href}>
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => renderNavLink(link))}
         </nav>
 
         <div className="header-actions">
@@ -90,12 +110,17 @@ export default function SiteHeader() {
         className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}
         aria-hidden={!mobileMenuOpen}
       >
+        <button
+          type="button"
+          className="mobile-menu-close"
+          onClick={closeMenu}
+          aria-label="Close menu"
+          tabIndex={mobileMenuOpen ? 0 : -1}
+        >
+          <CloseIcon size={24} />
+        </button>
         <nav className="mobile-nav" aria-label="Mobile navigation">
-          {navLinks.map((link) => (
-            <a key={link.href} href={link.href} onClick={closeMenu}>
-              {link.label}
-            </a>
-          ))}
+          {navLinks.map((link) => renderNavLink(link, closeMenu))}
           {/* biome-ignore lint/a11y/useValidAnchor: anchor navigates to contact section */}
           <a className="btn primary" href="#contact" onClick={closeMenu}>
             {t('hero.ctaPrimary')}
@@ -108,8 +133,8 @@ export default function SiteHeader() {
           type="button"
           className="mobile-menu-overlay"
           onClick={closeMenu}
-          onKeyDown={(e) => e.key === 'Escape' && closeMenu()}
           aria-label="Close menu"
+          tabIndex={-1}
         />
       )}
     </header>

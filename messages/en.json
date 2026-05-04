@@ -19,7 +19,8 @@
     "process": "Process",
     "projects": "Projects",
     "team": "Team",
-    "contact": "Contact"
+    "contact": "Contact",
+    "blog": "Blog"
   },
   "hero": {
     "eyebrow": "Company",
@@ -154,6 +155,7 @@
         "name": "Elaheh Dastan",
         "role": "CEO & Founder",
         "username": "elaheh-dastan",
+        "photo": "/team/elaheh-dastan.jpg",
         "bio": "Cloud architect and business strategist with a passion for building scalable solutions.",
         "social": {
           "github": "elaheh-dastan",

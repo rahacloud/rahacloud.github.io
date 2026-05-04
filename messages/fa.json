@@ -19,7 +19,8 @@
     "process": "فرایند",
     "projects": "پروژه‌ها",
     "team": "تیم",
-    "contact": "تماس"
+    "contact": "تماس",
+    "blog": "وبلاگ"
   },
   "hero": {
     "eyebrow": "شرکت",
@@ -154,6 +155,7 @@
         "name": "الهه داستان",
         "role": "مدیرعامل و بنیان‌گذار",
         "username": "elaheh-dastan",
+        "photo": "/team/elaheh-dastan.jpg",
         "bio": "معمار کلود و استراتژیست کسب‌وکار با علاقه به ساخت راه‌حل‌های مقیاس‌پذیر.",
         "social": {
           "github": "elaheh-dastan",
