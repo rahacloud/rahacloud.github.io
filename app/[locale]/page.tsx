@@ -146,7 +146,10 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </div>
               <div className="hero-panel-foot">
                 <span>
-                  <strong>{heroPillars.length}/{heroPillars.length}</strong> healthy
+                  <strong>
+                    {heroPillars.length}/{heroPillars.length}
+                  </strong>{' '}
+                  healthy
                 </span>
                 <span>
                   uptime · 99.9
@@ -330,66 +333,66 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                     <span className="team-role">{member.role}</span>
                     <p className="team-bio">{member.bio}</p>
                     <div className="team-social">
-                    {member.social.github && (
-                      <a
-                        href={`https://github.com/${member.social.github}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${member.name} on GitHub`}
-                      >
-                        <GitHubIcon />
-                      </a>
-                    )}
-                    {member.social.linkedin && (
-                      <a
-                        href={`https://linkedin.com/in/${member.social.linkedin}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${member.name} on LinkedIn`}
-                      >
-                        <LinkedInIcon />
-                      </a>
-                    )}
-                    {member.social.youtube && (
-                      <a
-                        href={`https://youtube.com/${member.social.youtube}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${member.name} on YouTube`}
-                      >
-                        <YouTubeIcon />
-                      </a>
-                    )}
-                    {member.social.instagram && (
-                      <a
-                        href={`https://instagram.com/${member.social.instagram}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${member.name} on Instagram`}
-                      >
-                        <InstagramIcon />
-                      </a>
-                    )}
-                    {member.social.reddit && (
-                      <a
-                        href={`https://reddit.com/user/${member.social.reddit}`}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${member.name} on Reddit`}
-                      >
-                        <RedditIcon />
-                      </a>
-                    )}
-                    {member.social.website && (
-                      <a
-                        href={member.social.website}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        aria-label={`${member.name}'s website`}
-                      >
-                        <WebsiteIcon />
-                      </a>
-                    )}
+                      {member.social.github && (
+                        <a
+                          href={`https://github.com/${member.social.github}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} on GitHub`}
+                        >
+                          <GitHubIcon />
+                        </a>
+                      )}
+                      {member.social.linkedin && (
+                        <a
+                          href={`https://linkedin.com/in/${member.social.linkedin}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} on LinkedIn`}
+                        >
+                          <LinkedInIcon />
+                        </a>
+                      )}
+                      {member.social.youtube && (
+                        <a
+                          href={`https://youtube.com/${member.social.youtube}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} on YouTube`}
+                        >
+                          <YouTubeIcon />
+                        </a>
+                      )}
+                      {member.social.instagram && (
+                        <a
+                          href={`https://instagram.com/${member.social.instagram}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} on Instagram`}
+                        >
+                          <InstagramIcon />
+                        </a>
+                      )}
+                      {member.social.reddit && (
+                        <a
+                          href={`https://reddit.com/user/${member.social.reddit}`}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name} on Reddit`}
+                        >
+                          <RedditIcon />
+                        </a>
+                      )}
+                      {member.social.website && (
+                        <a
+                          href={member.social.website}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${member.name}'s website`}
+                        >
+                          <WebsiteIcon />
+                        </a>
+                      )}
                     </div>
                   </div>
                 </div>

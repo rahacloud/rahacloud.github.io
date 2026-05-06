@@ -217,7 +217,9 @@ main {
   font-family: var(--font-display);
   font-size: clamp(2.8rem, 5.2vw, 5rem);
   font-weight: 360;
-  font-variation-settings: "opsz" 144, "SOFT" 30;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 30;
   letter-spacing: -0.025em;
   line-height: 1;
   margin-top: 0.9rem;
@@ -225,7 +227,9 @@ main {
 
 .display em {
   font-style: italic;
-  font-variation-settings: "opsz" 144, "SOFT" 100;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 100;
   color: var(--accent);
 }
 
@@ -671,10 +675,7 @@ html[dir="rtl"] .btn.primary:hover::after {
   content: "";
   position: absolute;
   inset: 0;
-  background-image: linear-gradient(
-    rgba(255, 255, 255, 0.025) 1px,
-    transparent 1px
-  );
+  background-image: linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px);
   background-size: 100% 22px;
   pointer-events: none;
 }
@@ -738,7 +739,9 @@ html[dir="rtl"] .btn.primary:hover::after {
   height: 0.55rem;
   border-radius: 50%;
   background: #2dd4bf;
-  box-shadow: 0 0 0 4px rgba(45, 212, 191, 0.18), 0 0 12px rgba(45, 212, 191, 0.45);
+  box-shadow:
+    0 0 0 4px rgba(45, 212, 191, 0.18),
+    0 0 12px rgba(45, 212, 191, 0.45);
   justify-self: center;
 }
 
@@ -767,11 +770,15 @@ html[dir="rtl"] .btn.primary:hover::after {
   width: max-content;
   max-width: min(280px, calc(100% + 8rem));
   border-radius: 6px;
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.35), 0 0 0 1px rgba(255, 255, 255, 0.06);
+  box-shadow:
+    0 12px 30px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.06);
   opacity: 0;
   transform: translateY(-4px);
   pointer-events: none;
-  transition: opacity 0.15s ease, transform 0.15s ease;
+  transition:
+    opacity 0.15s ease,
+    transform 0.15s ease;
 }
 
 .hero-panel-row .tip::before {
@@ -831,11 +838,15 @@ html[dir="rtl"] .btn.primary:hover::after {
 }
 
 @keyframes blink {
-  50% { opacity: 0; }
+  50% {
+    opacity: 0;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .cursor { animation: none; }
+  .cursor {
+    animation: none;
+  }
 }
 
 /* Stats — editorial numerals on bare background */
@@ -888,7 +899,9 @@ html[dir="rtl"] .btn.primary:hover::after {
   font-family: var(--font-display);
   font-size: clamp(3.2rem, 6vw, 5rem);
   font-weight: 320;
-  font-variation-settings: "opsz" 144, "SOFT" 50;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 50;
   letter-spacing: -0.04em;
   line-height: 0.95;
   color: var(--ink);
@@ -914,7 +927,9 @@ html[dir="rtl"] .btn.primary:hover::after {
   font-family: var(--font-display);
   font-size: clamp(2rem, 3.4vw, 3rem);
   font-weight: 360;
-  font-variation-settings: "opsz" 144, "SOFT" 30;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 30;
   letter-spacing: -0.02em;
   line-height: 1.05;
 }
@@ -946,7 +961,9 @@ html[dir="rtl"] .btn.primary:hover::after {
   font-family: var(--font-display);
   font-size: clamp(1.4rem, 2vw, 1.9rem);
   font-weight: 340;
-  font-variation-settings: "opsz" 144, "SOFT" 50;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 50;
   line-height: 1.25;
   letter-spacing: -0.01em;
   color: var(--ink);
@@ -1011,7 +1028,9 @@ html[dir="rtl"] .btn.primary:hover::after {
   font-family: var(--font-display);
   font-size: 1.4rem;
   font-weight: 380;
-  font-variation-settings: "opsz" 144, "SOFT" 30;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 30;
   letter-spacing: -0.01em;
   line-height: 1.15;
 }
@@ -1138,7 +1157,9 @@ html[dir="rtl"] .btn.primary:hover::after {
   font-family: var(--font-display);
   font-size: 1.5rem;
   font-weight: 380;
-  font-variation-settings: "opsz" 144, "SOFT" 30;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 30;
   color: #f0ebe3;
 }
 
@@ -1335,8 +1356,7 @@ html[dir="rtl"] .btn.primary:hover::after {
   font-family: inherit;
   background: transparent;
   color: var(--ink);
-  transition:
-    border-color 0.2s ease;
+  transition: border-color 0.2s ease;
 }
 
 .form-group input::placeholder,
@@ -1480,7 +1500,9 @@ html[dir="rtl"] .eyebrow {
   font-family: var(--font-display);
   font-size: 1.45rem;
   font-weight: 380;
-  font-variation-settings: "opsz" 144, "SOFT" 30;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 30;
   letter-spacing: -0.01em;
   color: var(--ink);
   margin: 0;
