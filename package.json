@@ -17,8 +17,8 @@
     "@fontsource-variable/geist": "^5.2.8",
     "@fontsource-variable/geist-mono": "^5.2.7",
     "gray-matter": "^4.0.3",
-    "next": "^16.2.5",
-    "next-intl": "^4.11.0",
+    "next": "^16.2.6",
+    "next-intl": "^4.11.1",
     "react": "^19.2.6",
     "react-dom": "^19.2.6",
     "rehype-highlight": "^7.0.2",
@@ -30,7 +30,7 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.4.14",
-    "@types/node": "^25.6.0",
+    "@types/node": "^25.6.2",
     "@types/react": "^19.2.14",
     "@types/react-dom": "^19.2.3",
     "typescript": "^6.0.3"
