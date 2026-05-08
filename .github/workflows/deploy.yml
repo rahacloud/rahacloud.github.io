@@ -36,7 +36,7 @@ jobs:
       # For deploy-origin (rsync). Pages-formatted artifact is a single
       # tar.gz wrapper that rsync would push verbatim, so we also publish a
       # plain copy of the directory tree.
-      - uses: actions/upload-artifact@v4
+      - uses: actions/upload-artifact@v7
         with:
           name: site
           path: out
