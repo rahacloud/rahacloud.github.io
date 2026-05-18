@@ -48,6 +48,10 @@ export default function SiteHeader() {
     return () => window.removeEventListener('keydown', onKey);
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    setMobileMenuOpen(false);
+  }, [locale]);
+
   const closeMenu = () => setMobileMenuOpen(false);
 
   const navLinks: NavLink[] = [
