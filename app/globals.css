@@ -179,13 +179,15 @@ main {
 }
 
 .container {
-  width: min(1120px, 92vw);
+  width: 100%;
+  max-width: 1120px;
   margin-inline: auto;
+  padding-inline: clamp(1rem, 4vw, 2rem);
 }
 
 .section {
   position: relative;
-  padding: clamp(3.5rem, 6vw, 6.5rem) 0;
+  padding: clamp(2.5rem, 6vw, 6.5rem) 0;
   z-index: 1;
 }
 
@@ -1003,7 +1005,7 @@ html[dir="rtl"] .btn.primary:hover::after {
 .services-grid,
 .projects-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(260px, 100%), 1fr));
   gap: 0;
   border-block-start: 1px solid var(--rule);
 }
@@ -1106,7 +1108,7 @@ html[dir="rtl"] .btn.primary:hover::after {
 
 .process-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(240px, 100%), 1fr));
   gap: 0;
   border-block-start: 1px solid rgba(255, 255, 255, 0.12);
 }
@@ -1183,9 +1185,16 @@ html[dir="rtl"] .btn.primary:hover::after {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(1.5rem, 4vw, 3rem);
+  gap: clamp(1.25rem, 4vw, 3rem);
   padding-block: 1.5rem;
   border-block: 1px solid var(--rule);
+}
+
+@media (max-width: 600px) {
+  .squad-grid {
+    justify-content: flex-start;
+    gap: 1.25rem 2rem;
+  }
 }
 
 .squad-card {
@@ -1328,7 +1337,7 @@ html[dir="rtl"] .btn.primary:hover::after {
 
 .form-row {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
   gap: 1rem;
 }
 
@@ -1390,7 +1399,7 @@ html[dir="rtl"] .btn.primary:hover::after {
 /* Testimonials */
 .testimonials-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
   gap: 1.5rem;
 }
 
@@ -1464,8 +1473,8 @@ html[dir="rtl"] .eyebrow {
 /* Team — editorial portrait blocks, no card chrome */
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: clamp(2rem, 5vw, 4rem);
+  grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+  gap: clamp(1.6rem, 5vw, 4rem) clamp(1.5rem, 4vw, 3rem);
   margin-top: 1rem;
 }
 
@@ -1569,8 +1578,8 @@ html[dir="rtl"] .eyebrow {
 
 .footer-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 1.8rem;
+  grid-template-columns: repeat(auto-fit, minmax(min(220px, 100%), 1fr));
+  gap: clamp(1.4rem, 3vw, 1.8rem);
 }
 
 .footer-title {
@@ -1713,30 +1722,78 @@ html[dir="rtl"] .scroll-to-top {
 
 @media (max-width: 720px) {
   .header-inner {
-    flex-wrap: wrap;
+    gap: 0.75rem;
+    padding: 0.9rem 0;
   }
   .hero {
     padding-top: 2.5rem;
   }
+  .service-card,
+  .project-card {
+    padding: 1.5rem 1.25rem;
+  }
+  .process-step {
+    padding: 1.6rem 1.25rem;
+  }
+  .stats-band {
+    padding-block: clamp(1.8rem, 5vw, 2.6rem);
+    margin-block: clamp(1.2rem, 4vw, 2.4rem);
+  }
+}
+
+@media (max-width: 560px) {
+  .brand-text span {
+    display: none;
+  }
+  .brand-mark {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+  }
+  .header-actions {
+    gap: 0.4rem;
+  }
+  .locale-toggle button {
+    padding: 0.4rem 0.7rem;
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 480px) {
-  .container {
-    width: 94vw;
-  }
   .display {
-    font-size: 2.4rem;
+    font-size: clamp(2.1rem, 9vw, 2.6rem);
   }
   .section-title {
-    font-size: 1.8rem;
+    font-size: clamp(1.6rem, 7vw, 2rem);
   }
-  .hero-panel,
-  .contact-card,
-  .contact-form {
-    padding: 1.2rem;
+  .section-header {
+    margin-bottom: 1.8rem;
+  }
+  .lead {
+    font-size: 1rem;
+    margin-top: 1.1rem;
+  }
+  .hero-panel {
+    padding: 1.1rem;
+    font-size: 0.78rem;
+  }
+  .hero-panel-row {
+    grid-template-columns: 1.2rem 1fr;
+    gap: 0.7rem;
+  }
+  .hero-panel-row > :nth-child(3) {
+    display: none;
+  }
+  .hero-panel-row .name {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .hero-panel-foot {
+    font-size: 0.68rem;
+    gap: 0.5rem;
   }
   .btn {
-    padding: 0.7rem 1.2rem;
+    padding: 0.75rem 1.2rem;
     font-size: 0.88rem;
   }
   .cta-row {
@@ -1745,6 +1802,56 @@ html[dir="rtl"] .scroll-to-top {
   }
   .cta-row .btn {
     width: 100%;
+  }
+  .stat-value {
+    font-size: clamp(2.6rem, 14vw, 3.6rem);
+  }
+  .about-list {
+    font-size: 1.2rem;
+  }
+  .about-list li {
+    padding: 0.95rem 0 0.95rem 2.4rem;
+  }
+  .about-list li::before {
+    top: 1.05rem;
+  }
+  .service-card,
+  .project-card {
+    padding: 1.4rem 1.1rem;
+  }
+  .service-card h3,
+  .project-card h3 {
+    font-size: 1.25rem;
+  }
+  .process-step {
+    padding: 1.4rem 1.1rem;
+  }
+  .process-step h3 {
+    font-size: 1.3rem;
+  }
+  .squad-logo {
+    width: 40px;
+    height: 40px;
+  }
+  .squad-name {
+    font-size: 0.78rem;
+  }
+  .team-name {
+    font-size: 1.25rem;
+  }
+  .contact-item a {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+  .form-actions {
+    flex-direction: column;
+  }
+  .form-actions .btn {
+    width: 100%;
+    flex: none;
+  }
+  .footer-grid {
+    gap: 1.2rem;
   }
   .scroll-to-top {
     bottom: 1rem;
@@ -1755,5 +1862,20 @@ html[dir="rtl"] .scroll-to-top {
   html[dir="rtl"] .scroll-to-top {
     right: auto;
     left: 1rem;
+  }
+}
+
+@media (max-width: 360px) {
+  .header-actions .theme-toggle {
+    padding: 0.4rem;
+  }
+  .squad-card {
+    gap: 0.6rem;
+  }
+}
+
+@media (hover: none) {
+  .hero-panel-row .tip {
+    display: none;
   }
 }

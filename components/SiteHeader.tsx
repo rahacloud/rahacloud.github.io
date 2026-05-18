@@ -48,6 +48,7 @@ export default function SiteHeader() {
     return () => window.removeEventListener('keydown', onKey);
   }, [mobileMenuOpen]);
 
+  // biome-ignore lint/correctness/useExhaustiveDependencies: close mobile menu when locale changes
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [locale]);

@@ -12,11 +12,11 @@ importers:
         specifier: ^5.2.9
         version: 5.2.9
       '@fontsource-variable/geist':
+        specifier: ^5.2.9
+        version: 5.2.9
+      '@fontsource-variable/geist-mono':
         specifier: ^5.2.8
         version: 5.2.8
-      '@fontsource-variable/geist-mono':
-        specifier: ^5.2.7
-        version: 5.2.7
       gray-matter:
         specifier: ^4.0.3
         version: 4.0.3
@@ -55,8 +55,8 @@ importers:
         specifier: ^2.4.15
         version: 2.4.15
       '@types/node':
-        specifier: ^25.8.0
-        version: 25.8.0
+        specifier: ^25.9.0
+        version: 25.9.0
       '@types/react':
         specifier: ^19.2.14
         version: 19.2.14
@@ -132,11 +132,11 @@ packages:
   '@fontsource-variable/fraunces@5.2.9':
     resolution: {integrity: sha512-Y6IjunlN9Ni723np+GIgAaKzCDBrPRrqNi01TZxHs5wtHYROWFM9W6yiT+/gGwSjWIRD18oX17kD/BRWekc/Lw==}
 
-  '@fontsource-variable/geist-mono@5.2.7':
-    resolution: {integrity: sha512-ZKlZ5sjtalb2TwXKs400mAGDlt/+2ENLNySPx0wTz3bP3mWARCsUW+rpxzZc7e05d2qGch70pItt3K4qttbIYA==}
+  '@fontsource-variable/geist-mono@5.2.8':
+    resolution: {integrity: sha512-KI5bj+hkkRiHttYHmccotUZ80ZuZyai+RwI1d7UId0clkx/jXxlo8qYK8j54WzmpBjtMoEMPyllV7faDcj+6RA==}
 
-  '@fontsource-variable/geist@5.2.8':
-    resolution: {integrity: sha512-cJ6m9e+8MQ5dCYJsLylfZrgBh6KkG4bOLckB35Tr9J/EqdkEM6QllH5PxqP1dhTvFup+HtMRPuz9xOjxXJggxw==}
+  '@fontsource-variable/geist@5.2.9':
+    resolution: {integrity: sha512-TP+QSBG3wxKGPE33CbMy/L0Nu3qvJ6Fy81Yc4LnQ95xH+i+cfEp8fyU8/kfV14YwszxIFPhnoMTbjL71waVpyQ==}
 
   '@formatjs/fast-memoize@3.1.5':
     resolution: {integrity: sha512-KLi3fan6WnCHmigd9pmEEN8Hid0v4wiFBW576M/d07KMWYecf1CvyMI3n34vCmHT4AoVqG2n702kiHbXjzZX2A==}
@@ -557,8 +557,8 @@ packages:
   '@types/ms@2.1.0':
     resolution: {integrity: sha512-GsCCIZDE/p3i96vtEqx+7dBUGXrc7zeSK3wwPHIaRThS+9OhWIXRqzs4d6k1SVU8g91DrNRWxWUGhp5KXQb2VA==}
 
-  '@types/node@25.8.0':
-    resolution: {integrity: sha512-TCFSk8IZh+iLX1xtksoBVtdmgL+1IX0fC9BeU4QqFSuNdN/K+HUlhqOzEmSYYpZUVsLYcPqc9KX+60iDuninSQ==}
+  '@types/node@25.9.0':
+    resolution: {integrity: sha512-AOQwYUNolgy3VosiRqXrACUXTN8nJUtPl7FJXMqZVyxiiCLhQuG3jXKvCS1ALr+Y2OmZhzzLVlYPEqJaiqkaJQ==}
 
   '@types/react-dom@19.2.3':
     resolution: {integrity: sha512-jp2L/eY6fn+KgVVQAOqYItbF0VY/YApe5Mz2F0aykSO8gx31bYCZyvSeYxCHKvzHG5eZjc+zyaS5BrBWya2+kQ==}
@@ -580,13 +580,13 @@ packages:
   bail@2.0.2:
     resolution: {integrity: sha512-0xO6mYd7JB2YesxDKplafRpsiOzPt9V02ddPCLbY1xYGPOX24NTyN50qnUxgCPcSoYMhKpAuBTjQoRZCAkUDRw==}
 
-  baseline-browser-mapping@2.10.29:
-    resolution: {integrity: sha512-Asa2krT+XTPZINCS+2QcyS8WTkObE77RwkydwF7h6DmnKqbvlalz93m/dnphUyCa6SWSP51VgtEUf2FN+gelFQ==}
+  baseline-browser-mapping@2.10.31:
+    resolution: {integrity: sha512-MujYO3eP72uvmSE0i4wltsodRfIpZATP3jvzRNRGGxgzId7aVocVJJV3nf01qnzzKFGxQVC9bpWxl5cjxTr/7Q==}
     engines: {node: '>=6.0.0'}
     hasBin: true
 
-  caniuse-lite@1.0.30001792:
-    resolution: {integrity: sha512-hVLMUZFgR4JJ6ACt1uEESvQN1/dBVqPAKY0hgrV70eN3391K6juAfTjKZLKvOMsx8PxA7gsY1/tLMMTcfFLLpw==}
+  caniuse-lite@1.0.30001793:
+    resolution: {integrity: sha512-iwSsYWaCOoh26cV8NwNRViHlrfUvYsHDfRVcbtmw0Kg6PJIZZXwMkj1442FYLBGkeUf1juAsU3DTfxW579mrPA==}
 
   ccount@2.0.1:
     resolution: {integrity: sha512-eyrF0jiFpY+3drT6383f1qhkbGsLSifNAjA61IUjZjmLCWjItY6LB9ft9YhoDgwfmclB2zhu51Lc7+95b8NRAg==}
@@ -1004,9 +1004,9 @@ snapshots:
 
   '@fontsource-variable/fraunces@5.2.9': {}
 
-  '@fontsource-variable/geist-mono@5.2.7': {}
+  '@fontsource-variable/geist-mono@5.2.8': {}
 
-  '@fontsource-variable/geist@5.2.8': {}
+  '@fontsource-variable/geist@5.2.9': {}
 
   '@formatjs/fast-memoize@3.1.5': {}
 
@@ -1283,7 +1283,7 @@ snapshots:
 
   '@types/ms@2.1.0': {}
 
-  '@types/node@25.8.0':
+  '@types/node@25.9.0':
     dependencies:
       undici-types: 7.24.6
 
@@ -1305,9 +1305,9 @@ snapshots:
 
   bail@2.0.2: {}
 
-  baseline-browser-mapping@2.10.29: {}
+  baseline-browser-mapping@2.10.31: {}
 
-  caniuse-lite@1.0.30001792: {}
+  caniuse-lite@1.0.30001793: {}
 
   ccount@2.0.1: {}
 
@@ -1614,8 +1614,8 @@ snapshots:
     dependencies:
       '@next/env': 16.2.6
       '@swc/helpers': 0.5.15
-      baseline-browser-mapping: 2.10.29
-      caniuse-lite: 1.0.30001792
+      baseline-browser-mapping: 2.10.31
+      caniuse-lite: 1.0.30001793
       postcss: 8.4.31
       react: 19.2.6
       react-dom: 19.2.6(react@19.2.6)
