@@ -62,6 +62,15 @@ export default function SiteHeader() {
     wasOpenRef.current = mobileMenuOpen;
   }, [mobileMenuOpen]);
 
+  useEffect(() => {
+    const mql = window.matchMedia('(min-width: 961px)');
+    const handler = (e: MediaQueryListEvent) => {
+      if (e.matches) setMobileMenuOpen(false);
+    };
+    mql.addEventListener('change', handler);
+    return () => mql.removeEventListener('change', handler);
+  }, []);
+
   const closeMenu = () => setMobileMenuOpen(false);
 
   const navLinks: NavLink[] = [
@@ -120,36 +129,34 @@ export default function SiteHeader() {
         </div>
       </div>
 
-      <div
-        id="mobile-menu"
-        className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}
-        inert={!mobileMenuOpen}
-      >
-        <button
-          type="button"
-          className="mobile-menu-close"
-          onClick={closeMenu}
-          aria-label="Close menu"
-        >
-          <CloseIcon size={24} />
-        </button>
-        <nav className="mobile-nav" aria-label="Mobile navigation">
-          {navLinks.map((link) => renderNavLink(link, closeMenu))}
-          {/* biome-ignore lint/a11y/useValidAnchor: anchor navigates to contact section */}
-          <a className="btn primary" href="#contact" onClick={closeMenu}>
-            {t('hero.ctaPrimary')}
-          </a>
-        </nav>
-      </div>
-
       {mobileMenuOpen && (
-        <button
-          type="button"
-          className="mobile-menu-overlay"
-          onClick={closeMenu}
-          aria-label="Close menu"
-          tabIndex={-1}
-        />
+        <>
+          <div id="mobile-menu" className="mobile-menu open">
+            <button
+              type="button"
+              className="mobile-menu-close"
+              onClick={closeMenu}
+              aria-label="Close menu"
+            >
+              <CloseIcon size={24} />
+            </button>
+            <nav className="mobile-nav" aria-label="Mobile navigation">
+              {navLinks.map((link) => renderNavLink(link, closeMenu))}
+              {/* biome-ignore lint/a11y/useValidAnchor: anchor navigates to contact section */}
+              <a className="btn primary" href="#contact" onClick={closeMenu}>
+                {t('hero.ctaPrimary')}
+              </a>
+            </nav>
+          </div>
+
+          <button
+            type="button"
+            className="mobile-menu-overlay"
+            onClick={closeMenu}
+            aria-label="Close menu"
+            tabIndex={-1}
+          />
+        </>
       )}
     </header>
   );

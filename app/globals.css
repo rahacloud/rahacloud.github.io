@@ -385,41 +385,44 @@ main {
   height: 100dvh;
   background: var(--panel);
   z-index: 110;
-  visibility: hidden;
-  pointer-events: none;
-  transform: translateX(110%);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    visibility 0s linear 0.3s;
-  box-shadow: none;
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.12);
   border-inline-start: 1px solid var(--border-light);
+  animation: menuSlideIn 0.28s ease both;
 }
 
 html[dir="rtl"] .mobile-menu {
-  transform: translateX(-110%);
-}
-
-.mobile-menu.open {
-  visibility: visible;
-  pointer-events: auto;
-  transform: translateX(0);
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease,
-    visibility 0s linear 0s;
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.12);
-}
-
-html[dir="rtl"] .mobile-menu.open {
   box-shadow: 10px 0 30px rgba(0, 0, 0, 0.12);
+  animation-name: menuSlideInRtl;
+}
+
+@keyframes menuSlideIn {
+  from {
+    transform: translateX(100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@keyframes menuSlideInRtl {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mobile-menu {
+    animation: none;
+  }
 }
 
 @media (min-width: 961px) {
   .mobile-menu,
-  .mobile-menu-overlay,
-  .mobile-menu-toggle {
-    display: none !important;
+  .mobile-menu-overlay {
+    display: none;
   }
 }
 
