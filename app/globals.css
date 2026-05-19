@@ -386,19 +386,25 @@ main {
   height: 100dvh;
   background: var(--panel);
   z-index: 110;
-  transform: translateX(100%);
-  transition: transform 0.3s ease;
-  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.12);
+  transform: translateX(110%);
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: none;
   border-inline-start: 1px solid var(--border-light);
 }
 
 html[dir="rtl"] .mobile-menu {
-  transform: translateX(-100%);
-  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.12);
+  transform: translateX(-110%);
 }
 
 .mobile-menu.open {
   transform: translateX(0);
+  box-shadow: -10px 0 30px rgba(0, 0, 0, 0.12);
+}
+
+html[dir="rtl"] .mobile-menu.open {
+  box-shadow: 10px 0 30px rgba(0, 0, 0, 0.12);
 }
 
 .mobile-menu-close {
