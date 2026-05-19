@@ -2,7 +2,7 @@
 
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { Link } from '@/i18n/routing';
 import { CloseIcon, MenuIcon } from './icons';
 import LocaleToggle from './LocaleToggle';
@@ -15,6 +15,8 @@ export default function SiteHeader() {
   const locale = useLocale();
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const toggleButtonRef = useRef<HTMLButtonElement>(null);
+  const wasOpenRef = useRef(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -52,6 +54,13 @@ export default function SiteHeader() {
   useEffect(() => {
     setMobileMenuOpen(false);
   }, [locale]);
+
+  useEffect(() => {
+    if (wasOpenRef.current && !mobileMenuOpen) {
+      toggleButtonRef.current?.focus();
+    }
+    wasOpenRef.current = mobileMenuOpen;
+  }, [mobileMenuOpen]);
 
   const closeMenu = () => setMobileMenuOpen(false);
 
@@ -98,6 +107,7 @@ export default function SiteHeader() {
           <ThemeToggle />
           <LocaleToggle />
           <button
+            ref={toggleButtonRef}
             type="button"
             className="mobile-menu-toggle"
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -113,14 +123,13 @@ export default function SiteHeader() {
       <div
         id="mobile-menu"
         className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}
-        aria-hidden={!mobileMenuOpen}
+        inert={!mobileMenuOpen}
       >
         <button
           type="button"
           className="mobile-menu-close"
           onClick={closeMenu}
           aria-label="Close menu"
-          tabIndex={mobileMenuOpen ? 0 : -1}
         >
           <CloseIcon size={24} />
         </button>
