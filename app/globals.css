@@ -239,14 +239,6 @@ main {
   margin-top: 0.9rem;
 }
 
-.display em {
-  font-style: italic;
-  font-variation-settings:
-    "opsz" 144,
-    "SOFT" 100;
-  color: var(--accent);
-}
-
 .lead {
   font-size: clamp(1.05rem, 1.4vw, 1.3rem);
   color: var(--ink-soft);
@@ -1431,68 +1423,6 @@ html[dir="rtl"] .btn.primary:hover::after {
 .form-actions .btn {
   flex: 1;
   min-width: 140px;
-}
-
-/* Testimonials */
-.testimonials-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
-  gap: 1.5rem;
-}
-
-.testimonial-card {
-  background: var(--panel);
-  border-radius: var(--radius-lg);
-  padding: 2rem;
-  border: 1px solid var(--border-light);
-  box-shadow: var(--shadow);
-  display: grid;
-  gap: 1rem;
-}
-
-.testimonial-quote {
-  position: relative;
-  padding-left: 1.5rem;
-}
-
-.testimonial-quote::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  bottom: 0;
-  width: 3px;
-  background: var(--accent);
-  border-radius: 2px;
-}
-
-.testimonial-quote p {
-  font-size: 1.05rem;
-  color: var(--ink-soft);
-  font-style: italic;
-}
-
-.testimonial-author {
-  display: flex;
-  align-items: center;
-  gap: 0.75rem;
-}
-
-.testimonial-author img {
-  width: 48px;
-  height: 48px;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.testimonial-author-info strong {
-  display: block;
-  font-size: 0.95rem;
-}
-
-.testimonial-author-info span {
-  font-size: 0.85rem;
-  color: var(--ink-faint);
 }
 
 html[dir="rtl"] .brand-text strong {
