@@ -12,7 +12,6 @@ import '@fontsource-variable/fraunces/opsz.css';
 import '@fontsource-variable/fraunces/opsz-italic.css';
 import '@fontsource-variable/geist/index.css';
 import '@fontsource-variable/geist-mono/index.css';
-import 'vazirmatn/Vazirmatn-font-face.css';
 
 import '@/app/globals.css';
 
@@ -143,6 +142,15 @@ export default async function LocaleLayout({
         <link rel="alternate" hrefLang="en" href="/en" />
         <link rel="alternate" hrefLang="fa" href="/fa" />
         <link rel="alternate" hrefLang="x-default" href="/en" />
+        {locale === 'fa' && (
+          <link
+            rel="preload"
+            href="/fonts/vazirmatn-variable.woff2"
+            as="font"
+            type="font/woff2"
+            crossOrigin=""
+          />
+        )}
         <StructuredData organization={organizationData} services={servicesData} />
         <script
           // biome-ignore lint/security/noDangerouslySetInnerHtml: Theme script must run before render to prevent flash
