@@ -3,17 +3,21 @@
 # ---- Dependencies ----
 FROM node:24-alpine AS deps
 WORKDIR /app
-ADD --chmod=755 https://github.com/pnpm/pnpm/releases/download/v10.33.0/pnpm-linuxstatic-x64 /usr/local/bin/pnpm
+ENV PNPM_HOME=/pnpm
+ENV PATH=$PNPM_HOME:$PATH
+RUN npm install -g --registry=https://mirrors.liara.ir/npm pnpm@10.33.0
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
-RUN --mount=type=cache,id=pnpm,target=/root/.local/share/pnpm/store \
-    pnpm install --frozen-lockfile --registry=https://mirror-npm.runflare.com
+RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
+    pnpm install --frozen-lockfile --registry=https://mirrors.liara.ir/npm
 
 # ---- Build ----
 FROM node:24-alpine AS builder
 WORKDIR /app
+ENV PNPM_HOME=/pnpm
+ENV PATH=$PNPM_HOME:$PATH
 ENV NEXT_TELEMETRY_DISABLED=1
-ADD --chmod=755 https://github.com/pnpm/pnpm/releases/download/v10.33.0/pnpm-linuxstatic-x64 /usr/local/bin/pnpm
+RUN npm install -g --registry=https://mirrors.liara.ir/npm pnpm@10.33.0
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
