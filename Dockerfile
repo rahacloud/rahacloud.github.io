@@ -5,11 +5,11 @@ FROM node:24-alpine AS deps
 WORKDIR /app
 ENV PNPM_HOME=/pnpm
 ENV PATH=$PNPM_HOME:$PATH
-RUN npm install -g --registry=https://mirrors.liara.ir/npm pnpm@10.33.0
+RUN npm install -g --registry=https://package-mirror.liara.ir/repository/npm/ pnpm@10.33.0
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
-    pnpm install --frozen-lockfile --registry=https://mirrors.liara.ir/npm
+    pnpm install --frozen-lockfile --registry=https://package-mirror.liara.ir/repository/npm/
 
 # ---- Build ----
 FROM node:24-alpine AS builder
@@ -17,7 +17,7 @@ WORKDIR /app
 ENV PNPM_HOME=/pnpm
 ENV PATH=$PNPM_HOME:$PATH
 ENV NEXT_TELEMETRY_DISABLED=1
-RUN npm install -g --registry=https://mirrors.liara.ir/npm pnpm@10.33.0
+RUN npm install -g --registry=https://package-mirror.liara.ir/repository/npm/ pnpm@10.33.0
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
