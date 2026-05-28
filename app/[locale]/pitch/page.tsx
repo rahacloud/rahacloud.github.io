@@ -6,9 +6,8 @@ import PitchDeckNav from './PitchDeckNav';
 type Pillar = { title: string; desc: string };
 type Stat = { value: string; label: string };
 type Service = { title: string; desc: string; tags: string[] };
-type Step = { title: string; desc: string };
 type Project = { title: string; desc: string; result: string };
-type Pain = { title: string; desc: string };
+type Pair = { title: string; desc: string };
 type TeamMember = {
   name: string;
   role: string;
@@ -23,7 +22,22 @@ type TeamMember = {
   };
 };
 
-const partnerLogos = ['/logos/aws.svg', '/logos/hetzner.svg', '/logos/arvancloud.svg'];
+const partnerLogos: Record<number, string> = {
+  0: '/logos/aws.svg',
+  1: '/logos/hetzner.svg',
+  2: '/logos/arvancloud.svg',
+};
+
+const clients = [
+  { key: 'bitbarg', href: 'https://bitbarg.com/', logo: '/logos/bitbarg.jpg', padded: false },
+  { key: 'hatchup', href: 'https://hatchup.capital/', logo: '/logos/hatchup.jpg', padded: false },
+  {
+    key: 'aveehealth',
+    href: 'https://www.avee.health/',
+    logo: '/logos/aveehealth.svg',
+    padded: true,
+  },
+];
 
 export default async function PitchPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
@@ -31,24 +45,27 @@ export default async function PitchPage({ params }: { params: Promise<{ locale: 
 
   const t = await getTranslations();
 
-  const problems = t.raw('pitch.problem.items') as Pain[];
-  const whyItems = t.raw('pitch.why.items') as Pain[];
-  const stats = t.raw('stats') as Stat[];
+  const visionPoints = t.raw('pitch.vision.points') as string[];
+  const problems = t.raw('pitch.problem.items') as Pair[];
   const services = t.raw('services.items') as Service[];
-  const processSteps = t.raw('process.steps') as Step[];
+  const marketSegments = t.raw('pitch.market.segments') as Pair[];
+  const stats = t.raw('stats') as Stat[];
   const projects = t.raw('projects.items') as Project[];
+  const modelStreams = t.raw('pitch.model.streams') as Pair[];
+  const whyItems = t.raw('pitch.why.items') as Pair[];
   const pillars = t.raw('hero.pillars') as Pillar[];
   const teamMembers = t.raw('team.members') as TeamMember[];
 
   const deckSections = [
     { id: 'cover', label: t('pitch.deck.cover') },
+    { id: 'vision', label: t('pitch.deck.vision') },
     { id: 'problem', label: t('pitch.deck.problem') },
     { id: 'solution', label: t('pitch.deck.solution') },
-    { id: 'why', label: t('pitch.deck.why') },
+    { id: 'market', label: t('pitch.deck.market') },
     { id: 'traction', label: t('pitch.deck.traction') },
-    { id: 'process', label: t('pitch.deck.process') },
+    { id: 'model', label: t('pitch.deck.model') },
+    { id: 'why', label: t('pitch.deck.why') },
     { id: 'team', label: t('pitch.deck.team') },
-    { id: 'partners', label: t('pitch.deck.partners') },
     { id: 'closing', label: t('pitch.deck.closing') },
   ];
 
@@ -60,18 +77,36 @@ export default async function PitchPage({ params }: { params: Promise<{ locale: 
       <section id="cover" className="section pitch-slide pitch-cover">
         <div className="container">
           <span className="eyebrow">{t('pitch.cover.eyebrow')}</span>
-          <h1 className="display">{t('hero.title')}</h1>
-          <p className="lead">{t('hero.subtitle')}</p>
+          <h1 className="display">{t('pitch.cover.title')}</h1>
+          <p className="lead">{t('pitch.cover.subtitle')}</p>
           <div className="cta-row">
             <a className="btn primary" href={`/${locale}#contact`}>
               {t('hero.ctaPrimary')}
             </a>
-            <a className="btn ghost" href="#solution">
+            <a className="btn ghost" href="#problem">
               {t('hero.ctaSecondary')}
             </a>
           </div>
           <p className="meta-note">{t('hero.note')}</p>
           <span className="pitch-scroll-hint">{t('pitch.cover.scroll')}</span>
+        </div>
+      </section>
+
+      {/* Vision */}
+      <section id="vision" className="section section-alt pitch-slide">
+        <div className="container">
+          <div className="section-header">
+            <span className="eyebrow">{t('pitch.vision.eyebrow')}</span>
+            <h2 className="section-title">{t('pitch.vision.title')}</h2>
+          </div>
+          <p className="pitch-prose">{t('pitch.vision.body')}</p>
+          <div className="pitch-points">
+            {visionPoints.map((point) => (
+              <p key={point} className="pitch-point">
+                {point}
+              </p>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -96,12 +131,12 @@ export default async function PitchPage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* Solution */}
-      <section id="solution" className="section pitch-slide">
+      <section id="solution" className="section section-alt pitch-slide">
         <div className="container">
           <div className="section-header">
-            <span className="eyebrow">{t('nav.services')}</span>
-            <h2 className="section-title">{t('services.title')}</h2>
-            <p className="section-subtitle">{t('services.subtitle')}</p>
+            <span className="eyebrow">{t('pitch.solution.eyebrow')}</span>
+            <h2 className="section-title">{t('pitch.solution.title')}</h2>
+            <p className="section-subtitle">{t('pitch.solution.subtitle')}</p>
           </div>
           <div className="services-grid">
             {services.map((service) => (
@@ -121,18 +156,19 @@ export default async function PitchPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      {/* Why Raha */}
-      <section id="why" className="section section-alt pitch-slide">
+      {/* Market / Opportunity */}
+      <section id="market" className="section pitch-slide">
         <div className="container">
           <div className="section-header">
-            <span className="eyebrow">{t('pitch.why.eyebrow')}</span>
-            <h2 className="section-title">{t('pitch.why.title')}</h2>
+            <span className="eyebrow">{t('pitch.market.eyebrow')}</span>
+            <h2 className="section-title">{t('pitch.market.title')}</h2>
+            <p className="section-subtitle">{t('pitch.market.body')}</p>
           </div>
-          <div className="pitch-why-grid">
-            {whyItems.map((item) => (
-              <div key={item.title} className="pitch-why-item">
-                <h3>{item.title}</h3>
-                <p>{item.desc}</p>
+          <div className="pitch-trio">
+            {marketSegments.map((segment) => (
+              <div key={segment.title} className="pitch-card">
+                <h3>{segment.title}</h3>
+                <p>{segment.desc}</p>
               </div>
             ))}
           </div>
@@ -140,7 +176,7 @@ export default async function PitchPage({ params }: { params: Promise<{ locale: 
       </section>
 
       {/* Traction */}
-      <section id="traction" className="section pitch-slide">
+      <section id="traction" className="section section-alt pitch-slide">
         <div className="container">
           <div className="section-header">
             <span className="eyebrow">{t('pitch.traction.eyebrow')}</span>
@@ -169,23 +205,72 @@ export default async function PitchPage({ params }: { params: Promise<{ locale: 
               </article>
             ))}
           </div>
+          <div className="squad-grid pitch-clients">
+            {clients.map((client) => (
+              <a
+                key={client.key}
+                href={client.href}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="squad-card"
+              >
+                <Image
+                  src={client.logo}
+                  alt={t(`clients.${client.key}`)}
+                  width={64}
+                  height={64}
+                  className={`squad-logo${client.padded ? ' squad-logo--padded' : ''}`}
+                />
+                <span className="squad-name">{t(`clients.${client.key}`)}</span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 
-      {/* Process */}
-      <section id="process" className="section process-section pitch-slide">
+      {/* Business model */}
+      <section id="model" className="section pitch-slide">
         <div className="container">
           <div className="section-header">
-            <span className="eyebrow">{t('nav.process')}</span>
-            <h2 className="section-title">{t('process.title')}</h2>
+            <span className="eyebrow">{t('pitch.model.eyebrow')}</span>
+            <h2 className="section-title">{t('pitch.model.title')}</h2>
           </div>
-          <div className="process-grid">
-            {processSteps.map((step, index) => (
-              <div key={step.title} className="process-step">
-                <span>{String(index + 1).padStart(2, '0')}</span>
-                <h3>{step.title}</h3>
-                <p>{step.desc}</p>
+          <div className="pitch-trio">
+            {modelStreams.map((stream, index) => (
+              <div key={stream.title} className="pitch-card">
+                <span className="pitch-card-index">{String(index + 1).padStart(2, '0')}</span>
+                <h3>{stream.title}</h3>
+                <p>{stream.desc}</p>
               </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Why we win */}
+      <section id="why" className="section section-alt pitch-slide">
+        <div className="container">
+          <div className="section-header">
+            <span className="eyebrow">{t('pitch.why.eyebrow')}</span>
+            <h2 className="section-title">{t('pitch.why.title')}</h2>
+          </div>
+          <div className="pitch-why-grid">
+            {whyItems.map((item) => (
+              <div key={item.title} className="pitch-why-item">
+                <h3>{item.title}</h3>
+                <p>{item.desc}</p>
+              </div>
+            ))}
+          </div>
+          <p className="pitch-partner-note">{t('pitch.why.partnersNote')}</p>
+          <div className="pitch-partner-strip">
+            {pillars.map((pillar, index) => (
+              <span key={pillar.title} className="pitch-partner-chip">
+                {partnerLogos[index] && (
+                  <Image src={partnerLogos[index]} alt={pillar.title} width={28} height={28} />
+                )}
+                {pillar.title}
+              </span>
             ))}
           </div>
         </div>
@@ -264,35 +349,8 @@ export default async function PitchPage({ params }: { params: Promise<{ locale: 
         </div>
       </section>
 
-      {/* Cloud partners */}
-      <section id="partners" className="section section-alt pitch-slide">
-        <div className="container">
-          <div className="section-header">
-            <span className="eyebrow">{t('pitch.partners.eyebrow')}</span>
-            <h2 className="section-title">{t('pitch.partners.title')}</h2>
-          </div>
-          <div className="pitch-partners-grid">
-            {pillars.map((pillar, index) => (
-              <div key={pillar.title} className="pitch-partner">
-                {partnerLogos[index] && (
-                  <Image
-                    src={partnerLogos[index]}
-                    alt={pillar.title}
-                    width={40}
-                    height={40}
-                    className="pitch-partner-logo"
-                  />
-                )}
-                <h3>{pillar.title}</h3>
-                <p>{pillar.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Closing */}
-      <section id="closing" className="section pitch-slide pitch-closing">
+      {/* The ask */}
+      <section id="closing" className="section section-alt pitch-slide pitch-closing">
         <div className="container">
           <span className="eyebrow">{t('pitch.closing.eyebrow')}</span>
           <h2 className="display">{t('pitch.closing.title')}</h2>

@@ -247,7 +247,9 @@
     "metaTitle": "Pitch Deck | Raha Cloud",
     "metaDescription": "Raha Cloud company overview — infrastructure and DevOps that reduce cost and operational overhead on AWS, Hetzner, and Arvancloud.",
     "cover": {
-      "eyebrow": "Company Overview",
+      "eyebrow": "Investor Overview",
+      "title": "We make infrastructure invisible.",
+      "subtitle": "Raha Cloud is the DevOps team that designs, automates, and runs multi-cloud infrastructure — so product teams ship instead of firefight.",
       "scroll": "Scroll to explore"
     },
     "problem": {
@@ -273,9 +275,65 @@
         }
       ]
     },
+    "vision": {
+      "eyebrow": "Vision",
+      "title": "Every team deserves infrastructure that runs itself.",
+      "body": "Cloud is splintering across global hyperscalers and regional providers, and the operational burden is exploding. We believe infrastructure should be an invisible utility — reliable, automated, and cheap by default. Raha is building the team that owns that layer for companies across Iran, MENA, and beyond.",
+      "points": [
+        "Multi-cloud is the new default, not the exception.",
+        "Operations should be automated, not heroic.",
+        "Cost discipline is an engineering practice, not a spreadsheet."
+      ]
+    },
+    "solution": {
+      "eyebrow": "Solution",
+      "title": "One team for the whole infrastructure lifecycle.",
+      "subtitle": "From architecture to day-2 operations, we deliver end-to-end DevOps with clear deliverables, lower costs, and higher reliability."
+    },
+    "market": {
+      "eyebrow": "Opportunity",
+      "title": "A widening gap between cloud complexity and in-house skill.",
+      "body": "Every growing company adopts cloud faster than it can hire senior infrastructure talent. That gap is widest where global and regional providers must coexist — exactly the multi-cloud reality we specialize in.",
+      "segments": [
+        {
+          "title": "Iran",
+          "desc": "Companies bridging local providers like Arvancloud and Hamravesh with global infrastructure under tight constraints."
+        },
+        {
+          "title": "MENA",
+          "desc": "Regional businesses scaling on AWS and edge providers without large internal platform teams."
+        },
+        {
+          "title": "Global",
+          "desc": "Cost-sensitive startups consolidating onto Hetzner and right-sized cloud."
+        }
+      ]
+    },
+    "traction": {
+      "eyebrow": "Traction",
+      "title": "Results teams can measure."
+    },
+    "model": {
+      "eyebrow": "Business model",
+      "title": "Recurring revenue on top of high-trust engagements.",
+      "streams": [
+        {
+          "title": "Project engagements",
+          "desc": "Architecture, migration, and platform setup with fixed, outcome-based scopes."
+        },
+        {
+          "title": "Managed operations",
+          "desc": "Monthly retainers for monitoring, on-call, upgrades, and reliability — predictable recurring revenue."
+        },
+        {
+          "title": "Cost optimization",
+          "desc": "We cut cloud spend and share in the savings, aligning our upside with the client's."
+        }
+      ]
+    },
     "why": {
       "eyebrow": "Why Raha",
-      "title": "A team that owns infrastructure end to end.",
+      "title": "Why we win.",
       "items": [
         {
           "title": "Multi-cloud by default",
@@ -293,33 +351,27 @@
           "title": "Cost-first engineering",
           "desc": "We right-size, consolidate, and re-architect to cut spend — typically 40% — without trading away reliability."
         }
-      ]
-    },
-    "traction": {
-      "eyebrow": "Traction",
-      "title": "Results teams can measure."
-    },
-    "partners": {
-      "eyebrow": "Cloud partners",
-      "title": "Built on platforms we know deeply."
+      ],
+      "partnersNote": "Deep, hands-on expertise across the platforms our clients actually run on:"
     },
     "closing": {
-      "eyebrow": "Let's talk",
-      "title": "Infrastructure that runs itself — let's build yours.",
-      "subtitle": "Tell us about your current setup and goals. We'll map the fastest path to lower costs and higher reliability.",
+      "eyebrow": "The ask",
+      "title": "Let's build infrastructure that runs itself — together.",
+      "subtitle": "We're growing our client base, partner network, and team. If you operate infrastructure — or invest in the teams that do — let's talk.",
       "cta": "Book a call",
       "ctaSecondary": "Email us"
     },
     "deck": {
       "cover": "Intro",
+      "vision": "Vision",
       "problem": "Problem",
       "solution": "Solution",
-      "why": "Why Raha",
+      "market": "Market",
       "traction": "Traction",
-      "process": "Process",
+      "model": "Model",
+      "why": "Why us",
       "team": "Team",
-      "partners": "Partners",
-      "closing": "Contact"
+      "closing": "Ask"
     }
   }
 }

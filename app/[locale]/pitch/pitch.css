@@ -174,49 +174,124 @@ html {
   line-height: 1.55;
 }
 
-/* Partners */
-.pitch-partners-grid {
+/* Vision */
+.pitch-prose {
+  max-width: 62ch;
+  color: var(--ink-soft);
+  font-size: clamp(1.05rem, 1.4vw, 1.25rem);
+  line-height: 1.6;
+}
+
+.pitch-points {
+  margin-top: clamp(2rem, 4vw, 3rem);
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, 1fr);
   gap: 0;
   border-block-start: 1px solid var(--rule);
 }
 
-.pitch-partner {
-  padding: 1.9rem 1.5rem;
-  border-block-end: 1px solid var(--rule);
-  border-inline-end: 1px solid var(--rule);
-  display: grid;
-  gap: 0.8rem;
-  align-content: start;
+@media (max-width: 760px) {
+  .pitch-points {
+    grid-template-columns: 1fr;
+  }
 }
 
-.pitch-partner:last-child {
+.pitch-point {
+  padding: 1.6rem 1.3rem 0;
+  border-inline-end: 1px solid var(--rule);
+  font-family: var(--font-display);
+  font-size: clamp(1.15rem, 1.6vw, 1.4rem);
+  font-weight: 360;
+  font-variation-settings:
+    "opsz" 144,
+    "SOFT" 40;
+  line-height: 1.3;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+}
+
+.pitch-point::before {
+  content: "";
+  display: block;
+  width: 1.8rem;
+  height: 2px;
+  background: var(--accent);
+  margin-bottom: 1rem;
+}
+
+.pitch-point:last-child {
   border-inline-end: none;
 }
 
-.pitch-partner-logo {
-  width: 40px;
-  height: 40px;
-  object-fit: contain;
-  object-position: left center;
+@media (max-width: 760px) {
+  .pitch-point {
+    border-inline-end: none;
+    padding-block: 1.2rem 0;
+  }
 }
 
-html[dir="rtl"] .pitch-partner-logo {
-  object-position: right center;
+/* Three-column card grid (market segments, revenue streams) */
+.pitch-trio {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0;
+  border-block-start: 1px solid var(--rule);
 }
 
-.pitch-partner h3 {
+@media (max-width: 760px) {
+  .pitch-trio {
+    grid-template-columns: 1fr;
+  }
+}
+
+.pitch-trio .pitch-card:nth-child(3n) {
+  border-inline-end: none;
+}
+
+@media (max-width: 760px) {
+  .pitch-trio .pitch-card {
+    border-inline-end: none;
+  }
+}
+
+/* Partner stack (woven into "why we win") */
+.pitch-partner-note {
+  margin-top: clamp(2rem, 4vw, 3rem);
   font-family: var(--font-mono);
-  font-size: 0.95rem;
-  font-weight: 600;
-  letter-spacing: 0.04em;
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  color: var(--ink-faint);
 }
 
-.pitch-partner p {
-  color: var(--ink-soft);
-  font-size: 0.92rem;
-  line-height: 1.5;
+.pitch-partner-strip {
+  margin-top: 1.1rem;
+  padding-top: 1.5rem;
+  border-block-start: 1px solid var(--rule);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.2rem 2.2rem;
+  align-items: center;
+}
+
+.pitch-partner-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-mono);
+  font-size: 0.88rem;
+  font-weight: 500;
+  color: var(--ink);
+}
+
+.pitch-partner-chip img {
+  width: 28px;
+  height: 28px;
+  object-fit: contain;
+}
+
+/* Client logos on the traction slide */
+.pitch-clients {
+  margin-top: clamp(2rem, 4vw, 3rem);
 }
 
 /* Closing */
