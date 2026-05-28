@@ -241,5 +241,85 @@
   "testimonials": {
     "title": "What clients say",
     "subtitle": "Hear from teams we've worked with"
+  },
+  "pitch": {
+    "nav": "Pitch deck",
+    "metaTitle": "Pitch Deck | Raha Cloud",
+    "metaDescription": "Raha Cloud company overview — infrastructure and DevOps that reduce cost and operational overhead on AWS, Hetzner, and Arvancloud.",
+    "cover": {
+      "eyebrow": "Company Overview",
+      "scroll": "Scroll to explore"
+    },
+    "problem": {
+      "eyebrow": "The problem",
+      "title": "Infrastructure shouldn't be a tax on your team.",
+      "subtitle": "Teams pour time and budget into keeping infrastructure alive instead of building product. We take that weight off.",
+      "items": [
+        {
+          "title": "Maintenance overhead",
+          "desc": "Engineers spend their best hours patching servers and babysitting pipelines instead of shipping product."
+        },
+        {
+          "title": "Multi-cloud complexity",
+          "desc": "Stitching together AWS, Hetzner, and regional providers turns into a fragile, undocumented web."
+        },
+        {
+          "title": "Unreliable operations",
+          "desc": "Without SLOs, dashboards, and runbooks, every incident becomes a fire drill."
+        },
+        {
+          "title": "Runaway costs",
+          "desc": "Over-provisioned, idle, and mispriced resources quietly inflate the monthly cloud bill."
+        }
+      ]
+    },
+    "why": {
+      "eyebrow": "Why Raha",
+      "title": "A team that owns infrastructure end to end.",
+      "items": [
+        {
+          "title": "Multi-cloud by default",
+          "desc": "We design across AWS, Hetzner, Arvancloud, and Hamravesh — placing each workload where it runs best and cheapest."
+        },
+        {
+          "title": "Automation first",
+          "desc": "Everything as code: Terraform, Ansible, CI/CD, and GitOps so infrastructure is repeatable and self-healing."
+        },
+        {
+          "title": "Regional reach",
+          "desc": "Offices in Tehran and Istanbul let us serve Iran, MENA, and global clients with local context and compliance."
+        },
+        {
+          "title": "Cost-first engineering",
+          "desc": "We right-size, consolidate, and re-architect to cut spend — typically 40% — without trading away reliability."
+        }
+      ]
+    },
+    "traction": {
+      "eyebrow": "Traction",
+      "title": "Results teams can measure."
+    },
+    "partners": {
+      "eyebrow": "Cloud partners",
+      "title": "Built on platforms we know deeply."
+    },
+    "closing": {
+      "eyebrow": "Let's talk",
+      "title": "Infrastructure that runs itself — let's build yours.",
+      "subtitle": "Tell us about your current setup and goals. We'll map the fastest path to lower costs and higher reliability.",
+      "cta": "Book a call",
+      "ctaSecondary": "Email us"
+    },
+    "deck": {
+      "cover": "Intro",
+      "problem": "Problem",
+      "solution": "Solution",
+      "why": "Why Raha",
+      "traction": "Traction",
+      "process": "Process",
+      "team": "Team",
+      "partners": "Partners",
+      "closing": "Contact"
+    }
   }
 }

@@ -89,6 +89,7 @@ export default function SiteHeader() {
     { href: '#projects', label: t('nav.projects') },
     { href: '#team', label: t('nav.team') },
     { href: '#contact', label: t('nav.contact') },
+    { href: '/pitch', label: t('pitch.nav'), locale: true },
     { href: '/blog', label: t('nav.blog'), locale: true },
   ];
 
