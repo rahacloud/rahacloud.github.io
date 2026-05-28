@@ -14,7 +14,7 @@ export default function PitchDeckNav({ sections }: { sections: DeckSection[] }) 
           if (entry.isIntersecting) setActive(entry.target.id);
         }
       },
-      { rootMargin: '-45% 0px -45% 0px' },
+      { rootMargin: '-45% 0px -45% 0px' }
     );
 
     for (const section of sections) {
