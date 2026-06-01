@@ -66,15 +66,6 @@ jobs:
           cache-from: type=gha
           cache-to: type=gha,mode=max
 
-      - name: Trigger Darkube deploy
-        if: github.ref == 'refs/heads/main'
-        env:
-          DARKUBE_DEPLOY_TOKEN: ${{ secrets.DARKUBE_DEPLOY_TOKEN }}
-        run: |
-          curl -X PUT 'https://api.console.hamravesh.ir/api/v1/darkube/apps/update_from_cli/' \
-            -H 'Content-Type: application/json' \
-            -d "{\"trigger_deploy_token\": \"${DARKUBE_DEPLOY_TOKEN}\", \"app_id\": \"6b6e4611-6897-4e18-a876-5a99d701406b\", \"image_tag\": \"main\"}"
-
   build-pages:
     needs: lint
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
