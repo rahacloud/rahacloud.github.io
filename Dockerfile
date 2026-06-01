@@ -5,11 +5,11 @@ FROM node:24-alpine AS deps
 WORKDIR /app
 ENV PNPM_HOME=/pnpm
 ENV PATH=$PNPM_HOME:$PATH
-RUN npm install -g --registry=https://package-mirror.liara.ir/repository/npm/ pnpm@10.33.0
+RUN npm install -g pnpm@10.33.0
 
 COPY package.json pnpm-lock.yaml pnpm-workspace.yaml ./
 RUN --mount=type=cache,id=pnpm,target=/pnpm/store \
-    pnpm install --frozen-lockfile --registry=https://package-mirror.liara.ir/repository/npm/
+    pnpm install --frozen-lockfile
 
 # ---- Build ----
 FROM node:24-alpine AS builder
@@ -17,7 +17,7 @@ WORKDIR /app
 ENV PNPM_HOME=/pnpm
 ENV PATH=$PNPM_HOME:$PATH
 ENV NEXT_TELEMETRY_DISABLED=1
-RUN npm install -g --registry=https://package-mirror.liara.ir/repository/npm/ pnpm@10.33.0
+RUN npm install -g pnpm@10.33.0
 
 COPY --from=deps /app/node_modules ./node_modules
 COPY . .
@@ -27,7 +27,7 @@ ENV NEXT_PUBLIC_BASE_PATH=$NEXT_PUBLIC_BASE_PATH
 RUN pnpm build
 
 # ---- Runtime ----
-FROM nginxinc/nginx-unprivileged:1.29-alpine AS runner
+FROM nginxinc/nginx-unprivileged:1.31-alpine AS runner
 
 COPY --from=builder /app/out /usr/share/nginx/html
 
