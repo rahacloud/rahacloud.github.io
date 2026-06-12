@@ -18,7 +18,7 @@
     "@fontsource-variable/geist": "^5.2.9",
     "@fontsource-variable/geist-mono": "^5.2.8",
     "gray-matter": "^4.0.3",
-    "next": "^16.2.7",
+    "next": "^16.2.9",
     "next-intl": "^4.13.0",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
@@ -30,9 +30,9 @@
     "vazirmatn": "^33.0.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.4.16",
-    "@next/bundle-analyzer": "^16.2.7",
-    "@types/node": "^25.9.2",
+    "@biomejs/biome": "^2.5.0",
+    "@next/bundle-analyzer": "^16.2.9",
+    "@types/node": "^25.9.3",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "typescript": "^6.0.3"
