@@ -3,7 +3,7 @@ name: CI
 on:
   push:
     branches: [main]
-    tags: ['v*']
+    tags: ["v*"]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -20,7 +20,7 @@ jobs:
   lint:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
       - run: pnpm install
       - name: Run Biome
@@ -34,7 +34,7 @@ jobs:
       contents: read
       packages: write
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
 
       - uses: docker/setup-buildx-action@v4
 
@@ -71,7 +71,7 @@ jobs:
     if: github.event_name == 'workflow_dispatch' || (github.event_name == 'push' && github.ref == 'refs/heads/main')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v6
+      - uses: actions/checkout@v7
       - uses: pnpm/action-setup@v6
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
