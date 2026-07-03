@@ -18,8 +18,8 @@
     "@fontsource-variable/geist": "^5.2.9",
     "@fontsource-variable/geist-mono": "^5.2.8",
     "gray-matter": "^4.0.3",
-    "next": "^16.2.9",
-    "next-intl": "^4.13.0",
+    "next": "^16.2.10",
+    "next-intl": "^4.13.1",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "rehype-highlight": "^7.0.2",
@@ -30,9 +30,9 @@
     "vazirmatn": "^33.0.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.0",
-    "@next/bundle-analyzer": "^16.2.9",
-    "@types/node": "^26.0.0",
+    "@biomejs/biome": "^2.5.2",
+    "@next/bundle-analyzer": "^16.2.10",
+    "@types/node": "^26.1.0",
     "@types/react": "^19.2.17",
     "@types/react-dom": "^19.2.3",
     "typescript": "^6.0.3"
