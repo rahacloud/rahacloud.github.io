@@ -13,3 +13,9 @@ updates:
     directory: "/" # Location of package manifests
     schedule:
       interval: "weekly"
+    ignore:
+      # TypeScript 7 is the native (Go) rewrite and no longer ships the JS
+      # compiler API that Next.js's type-check step loads. Stay on 6.x until
+      # Next.js supports it.
+      - dependency-name: "typescript"
+        versions: [">=7.0.0"]
