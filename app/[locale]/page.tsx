@@ -305,6 +305,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 />
                 <span className="squad-name">{t('clients.aveehealth')}</span>
               </a>
+              <a
+                href="https://tala.land/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="squad-card"
+              >
+                <Image
+                  src="/logos/talaland.png"
+                  alt={t('clients.talaland')}
+                  width={64}
+                  height={64}
+                  className="squad-logo"
+                />
+                <span className="squad-name">{t('clients.talaland')}</span>
+              </a>
             </div>
           </div>
         </section>
