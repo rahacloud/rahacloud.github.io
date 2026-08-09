@@ -1,6 +1,8 @@
 import { notFound } from 'next/navigation';
+import LocaleRedirect from '@/components/LocaleRedirect';
+import { routing } from '@/i18n/routing';
 import { getAllPostSlugs, getPostBySlug } from '@/lib/blog';
-import { localeAlternates } from '@/lib/metadata';
+import { defaultLocaleOnlyAlternates } from '@/lib/metadata';
 
 export function generateStaticParams() {
   const slugs = getAllPostSlugs();
@@ -22,16 +24,33 @@ export async function generateMetadata({
   return {
     title: `${post.frontmatter.title} | Raha Cloud Blog`,
     description: post.frontmatter.description,
-    alternates: localeAlternates(locale, `/blog/${slug}`),
+    alternates: defaultLocaleOnlyAlternates(`/blog/${slug}`),
+    ...(locale === routing.defaultLocale ? {} : { robots: { index: false, follow: true } }),
   };
 }
 
-export default async function PostPage({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export default async function PostPage({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const { locale, slug } = await params;
   const post = await getPostBySlug(slug);
 
   if (!post) {
     notFound();
+  }
+
+  // Posts are English-only; other locales redirect to the canonical article.
+  if (locale !== routing.defaultLocale) {
+    const target = `/${routing.defaultLocale}/blog/${slug}`;
+
+    return (
+      <>
+        <meta httpEquiv="refresh" content={`0; url=${target}`} />
+        <LocaleRedirect to={target} />
+      </>
+    );
   }
 
   return (

@@ -1,15 +1,34 @@
 import Link from 'next/link';
+import LocaleRedirect from '@/components/LocaleRedirect';
+import { routing } from '@/i18n/routing';
 import { getAllPosts } from '@/lib/blog';
-import { localeAlternates } from '@/lib/metadata';
+import { defaultLocaleOnlyAlternates } from '@/lib/metadata';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
 
-  return { alternates: localeAlternates(locale, '/blog') };
+  return {
+    alternates: defaultLocaleOnlyAlternates('/blog'),
+    ...(locale === routing.defaultLocale ? {} : { robots: { index: false, follow: true } }),
+  };
 }
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
+
+  // Posts are written in English only, so every other locale redirects here
+  // rather than serving the same articles under a translated URL.
+  if (locale !== routing.defaultLocale) {
+    const target = `/${routing.defaultLocale}/blog`;
+
+    return (
+      <>
+        <meta httpEquiv="refresh" content={`0; url=${target}`} />
+        <LocaleRedirect to={target} />
+      </>
+    );
+  }
+
   const posts = getAllPosts();
 
   return (

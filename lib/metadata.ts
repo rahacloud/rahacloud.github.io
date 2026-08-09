@@ -24,3 +24,20 @@ export function localeAlternates(locale: string, path = '') {
     languages,
   };
 }
+
+/**
+ * Metadata for a route that only exists in the default locale -- the blog,
+ * whose posts are English-only. The other locales serve a redirect stub, so
+ * they must not be indexed and must not be advertised as translations.
+ */
+export function defaultLocaleOnlyAlternates(path = '') {
+  const canonical = `${SITE_URL}/${routing.defaultLocale}${path}`;
+
+  return {
+    canonical,
+    languages: {
+      [routing.defaultLocale]: canonical,
+      'x-default': canonical,
+    },
+  };
+}
