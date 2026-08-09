@@ -36,15 +36,6 @@
   <url>
     <loc>https://rahacloud.github.io/en/blog</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.github.io/en/blog"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://rahacloud.github.io/fa/blog"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.github.io/en/blog"/>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-  <url>
-    <loc>https://rahacloud.github.io/fa/blog</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.github.io/en/blog"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://rahacloud.github.io/fa/blog"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.github.io/en/blog"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
@@ -52,7 +43,6 @@
   <url>
     <loc>https://rahacloud.github.io/en/blog/hello-world</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.github.io/en/blog/hello-world"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://rahacloud.github.io/fa/blog/hello-world"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.github.io/en/blog/hello-world"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -60,7 +50,6 @@
   <url>
     <loc>https://rahacloud.github.io/en/blog/docker-swarm-vxlan-networking</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.github.io/en/blog/docker-swarm-vxlan-networking"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://rahacloud.github.io/fa/blog/docker-swarm-vxlan-networking"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.github.io/en/blog/docker-swarm-vxlan-networking"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
@@ -68,7 +57,6 @@
   <url>
     <loc>https://rahacloud.github.io/en/blog/docker-swarm-arvancloud-issues</loc>
     <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.github.io/en/blog/docker-swarm-arvancloud-issues"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://rahacloud.github.io/fa/blog/docker-swarm-arvancloud-issues"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.github.io/en/blog/docker-swarm-arvancloud-issues"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>

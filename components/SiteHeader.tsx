@@ -3,7 +3,7 @@
 import Image from 'next/image';
 import { useLocale, useTranslations } from 'next-intl';
 import { useEffect, useRef, useState } from 'react';
-import { Link } from '@/i18n/routing';
+import { Link, routing } from '@/i18n/routing';
 import { CloseIcon, MenuIcon } from './icons';
 import LocaleToggle from './LocaleToggle';
 import ThemeToggle from './ThemeToggle';
@@ -90,7 +90,9 @@ export default function SiteHeader() {
     { href: '#team', label: t('nav.team') },
     { href: '#contact', label: t('nav.contact') },
     { href: '/pitch', label: t('pitch.nav'), locale: true },
-    { href: '/blog', label: t('nav.blog'), locale: true },
+    // The blog is English-only, so link straight to it instead of sending
+    // Persian visitors through the redirect stub at /fa/blog.
+    { href: `/${routing.defaultLocale}/blog`, label: t('nav.blog') },
   ];
 
   const renderNavLink = (link: NavLink, onClick?: () => void) =>
