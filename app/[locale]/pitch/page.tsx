@@ -22,6 +22,10 @@ type TeamMember = {
   };
 };
 
+type MarketSegment = Pair & {
+  branch?: string;
+};
+
 const partnerLogos: Record<number, string> = {
   0: '/logos/aws.svg',
   1: '/logos/hetzner.svg',
@@ -48,7 +52,7 @@ export default async function PitchPage({ params }: { params: Promise<{ locale: 
   const visionPoints = t.raw('pitch.vision.points') as string[];
   const problems = t.raw('pitch.problem.items') as Pair[];
   const services = t.raw('services.items') as Service[];
-  const marketSegments = t.raw('pitch.market.segments') as Pair[];
+  const marketSegments = t.raw('pitch.market.segments') as MarketSegment[];
   const stats = t.raw('stats') as Stat[];
   const projects = t.raw('projects.items') as Project[];
   const modelStreams = t.raw('pitch.model.streams') as Pair[];
@@ -169,6 +173,7 @@ export default async function PitchPage({ params }: { params: Promise<{ locale: 
               <div key={segment.title} className="pitch-card">
                 <h3>{segment.title}</h3>
                 <p>{segment.desc}</p>
+                {segment.branch && <span className="pitch-card-tag">{segment.branch}</span>}
               </div>
             ))}
           </div>
