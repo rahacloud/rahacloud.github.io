@@ -79,16 +79,16 @@ const organizationData = {
   telephone: '+98 935 225 7378',
   addresses: [
     {
+      city: 'Barcelona',
+      country: 'Spain',
+    },
+    {
       district: 'Tohid',
       city: 'Tehran',
       country: 'Iran',
     },
-    {
-      district: 'Şişli',
-      city: 'Istanbul',
-      country: 'Türkiye',
-    },
   ],
+  areaServed: ['Spain', 'European Union', 'Iran', 'Middle East'],
   identifiers: {
     registrationNumber: '668767',
     nationalId: '14015174107',

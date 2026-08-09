@@ -17,6 +17,7 @@ type OrganizationData = {
   email: string;
   telephone: string;
   addresses: PostalAddress[];
+  areaServed?: string[];
   identifiers?: Identifiers;
   sameAs: string[];
 };
@@ -38,6 +39,15 @@ export default function StructuredData({ organization, services }: Props) {
     addressLocality: addr.city,
     addressCountry: addr.country,
   }));
+
+  const areaServedField = organization.areaServed?.length
+    ? {
+        areaServed: organization.areaServed.map((area) => ({
+          '@type': 'AdministrativeArea',
+          name: area,
+        })),
+      }
+    : {};
 
   const identifierList = [
     organization.identifiers?.registrationNumber && {
@@ -72,6 +82,7 @@ export default function StructuredData({ organization, services }: Props) {
     email: organization.email,
     telephone: organization.telephone,
     address: postalAddresses,
+    ...areaServedField,
     ...identifierFields,
     sameAs: organization.sameAs,
   };
@@ -86,6 +97,7 @@ export default function StructuredData({ organization, services }: Props) {
     email: organization.email,
     telephone: organization.telephone,
     address: postalAddresses,
+    ...areaServedField,
     ...identifierFields,
     priceRange: '$$',
     openingHours: 'Mo-Fr 09:00-18:00',
