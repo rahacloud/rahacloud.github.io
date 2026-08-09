@@ -6,6 +6,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import SkipLink from '@/components/SkipLink';
 import StructuredData from '@/components/StructuredData';
 import { routing } from '@/i18n/routing';
+import { localeAlternates, SITE_URL } from '@/lib/metadata';
 
 // Local fonts
 import '@fontsource-variable/fraunces/opsz.css';
@@ -22,21 +23,16 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   const { locale } = await params;
   const t = await getTranslations({ locale, namespace: 'meta' });
 
-  const baseUrl = 'https://rahacloud.github.io';
-
   return {
     title: t('title'),
     description: t('description'),
     icons: { icon: '/icon.png', apple: '/icon.png' },
-    metadataBase: new URL(baseUrl),
-    alternates: {
-      languages: { en: '/en', fa: '/fa' },
-      canonical: `/${locale}`,
-    },
+    metadataBase: new URL(SITE_URL),
+    alternates: localeAlternates(locale),
     openGraph: {
       title: t('title'),
       description: t('description'),
-      url: `${baseUrl}/${locale}`,
+      url: `${SITE_URL}/${locale}`,
       siteName: 'Raha Cloud',
       locale: locale === 'fa' ? 'fa_IR' : 'en_US',
       type: 'website',
@@ -138,9 +134,6 @@ export default async function LocaleLayout({
   return (
     <html lang={locale} dir={dir} suppressHydrationWarning>
       <head>
-        <link rel="alternate" hrefLang="en" href="/en" />
-        <link rel="alternate" hrefLang="fa" href="/fa" />
-        <link rel="alternate" hrefLang="x-default" href="/en" />
         {locale === 'fa' && (
           <link
             rel="preload"

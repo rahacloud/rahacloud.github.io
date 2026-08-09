@@ -1,5 +1,12 @@
 import Link from 'next/link';
 import { getAllPosts } from '@/lib/blog';
+import { localeAlternates } from '@/lib/metadata';
+
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
+  const { locale } = await params;
+
+  return { alternates: localeAlternates(locale, '/blog') };
+}
 
 export default async function BlogPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;

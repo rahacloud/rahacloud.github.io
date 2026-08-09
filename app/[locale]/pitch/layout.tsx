@@ -3,6 +3,7 @@ import { getTranslations, setRequestLocale } from 'next-intl/server';
 import LocaleToggle from '@/components/LocaleToggle';
 import ThemeToggle from '@/components/ThemeToggle';
 import { Link } from '@/i18n/routing';
+import { localeAlternates } from '@/lib/metadata';
 import './pitch.css';
 
 export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }) {
@@ -12,6 +13,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
   return {
     title: t('metaTitle'),
     description: t('metaDescription'),
+    alternates: localeAlternates(locale, '/pitch'),
   };
 }
 

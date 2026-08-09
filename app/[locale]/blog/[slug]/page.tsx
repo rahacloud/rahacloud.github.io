@@ -1,13 +1,18 @@
 import { notFound } from 'next/navigation';
 import { getAllPostSlugs, getPostBySlug } from '@/lib/blog';
+import { localeAlternates } from '@/lib/metadata';
 
 export function generateStaticParams() {
   const slugs = getAllPostSlugs();
   return slugs.map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
-  const { slug } = await params;
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string; slug: string }>;
+}) {
+  const { locale, slug } = await params;
   const post = await getPostBySlug(slug);
 
   if (!post) {
@@ -17,6 +22,7 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   return {
     title: `${post.frontmatter.title} | Raha Cloud Blog`,
     description: post.frontmatter.description,
+    alternates: localeAlternates(locale, `/blog/${slug}`),
   };
 }
 
