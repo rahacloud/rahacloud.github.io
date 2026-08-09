@@ -28,7 +28,7 @@
     "subtitle": "Raha Cloud helps teams reduce costs around maintaining and controlling infrastructure with DevOps solutions built on AWS, Hetzner, and Arvancloud.",
     "ctaPrimary": "Let's build together",
     "ctaSecondary": "See services",
-    "note": "Offices in Tehran & Istanbul — serving clients worldwide",
+    "note": "Branches in Barcelona & Tehran — serving clients worldwide",
     "pillarsTitle": "Cloud Partners",
     "pillars": [
       {
@@ -189,23 +189,25 @@
     "phone": "+98 935 225 7378",
     "whatsapp": "+989352257378",
     "telegram": "+989352257378",
-    "address": "Tehran & Istanbul — serving clients worldwide",
-    "hours": "Monday-Friday, 9:00-18:00 TRT",
+    "address": "Barcelona & Tehran — serving clients worldwide",
+    "hours": "Monday-Friday, 9:00-18:00 CET · 11:30-20:30 IRST",
     "cta": "Schedule a call",
     "offices": [
       {
-        "label": "Tehran Office",
+        "label": "Barcelona Branch",
+        "city": "Barcelona, Spain",
+        "region": "Europe",
+        "status": "Registration in progress"
+      },
+      {
+        "label": "Tehran Branch",
         "city": "Tehran, Iran",
+        "region": "Middle East",
         "district": "Tohid",
         "registrationNumber": "668767",
         "nationalId": "14015174107",
         "phone": "+982166572481",
         "phoneDisplay": "+98 21 6657 2481"
-      },
-      {
-        "label": "Istanbul Office",
-        "city": "Istanbul, Türkiye",
-        "district": "Şişli"
       }
     ],
     "labels": {
@@ -215,10 +217,11 @@
       "telegram": "Telegram",
       "github": "GitHub",
       "location": "Location",
-      "offices": "Offices",
+      "offices": "Branches",
       "district": "District",
       "registrationNumber": "Registration No.",
       "nationalId": "National ID",
+      "status": "Status",
       "hours": "Hours"
     }
   },
@@ -279,7 +282,7 @@
     "vision": {
       "eyebrow": "Vision",
       "title": "Every team deserves infrastructure that runs itself.",
-      "body": "Cloud is splintering across global hyperscalers and regional providers, and the operational burden is exploding. We believe infrastructure should be an invisible utility — reliable, automated, and cheap by default. Raha is building the team that owns that layer for companies across Iran, MENA, and beyond.",
+      "body": "Cloud is splintering across global hyperscalers and regional providers, and the operational burden is exploding. We believe infrastructure should be an invisible utility — reliable, automated, and cheap by default. With branches in Spain and Iran, Raha is building the team that owns that layer for companies across Europe, the Middle East, and beyond.",
       "points": [
         "Multi-cloud is the new default, not the exception.",
         "Operations should be automated, not heroic.",
@@ -294,19 +297,22 @@
     "market": {
       "eyebrow": "Opportunity",
       "title": "A widening gap between cloud complexity and in-house skill.",
-      "body": "Every growing company adopts cloud faster than it can hire senior infrastructure talent. That gap is widest where global and regional providers must coexist — exactly the multi-cloud reality we specialize in.",
+      "body": "Every growing company adopts cloud faster than it can hire senior infrastructure talent. That gap is widest where global and regional providers must coexist — exactly the multi-cloud reality we specialize in. Our two branches put us on both sides of it.",
       "segments": [
         {
+          "title": "Spain & EU",
+          "desc": "European startups and scale-ups consolidating onto AWS and Hetzner without hiring a full in-house platform team.",
+          "branch": "Barcelona branch"
+        },
+        {
           "title": "Iran",
-          "desc": "Companies bridging local providers like Arvancloud and Hamravesh with global infrastructure under tight constraints."
+          "desc": "Companies bridging local providers like Arvancloud and Hamravesh with global infrastructure under tight constraints.",
+          "branch": "Tehran branch"
         },
         {
-          "title": "MENA",
-          "desc": "Regional businesses scaling on AWS and edge providers without large internal platform teams."
-        },
-        {
-          "title": "Global",
-          "desc": "Cost-sensitive startups consolidating onto Hetzner and right-sized cloud."
+          "title": "MENA & Global",
+          "desc": "Regional businesses scaling on AWS and edge providers, served from whichever branch fits their timezone and compliance needs.",
+          "branch": "Both branches"
         }
       ]
     },
@@ -345,8 +351,8 @@
           "desc": "Everything as code: Terraform, Ansible, CI/CD, and GitOps so infrastructure is repeatable and self-healing."
         },
         {
-          "title": "Regional reach",
-          "desc": "Offices in Tehran and Istanbul let us serve Iran, MENA, and global clients with local context and compliance."
+          "title": "Two branches, one team",
+          "desc": "Our registered Iranian company and our incoming Spanish branch let us contract, invoice, and support clients across the Middle East and Europe with local context and compliance."
         },
         {
           "title": "Cost-first engineering",
