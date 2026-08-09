@@ -2,6 +2,7 @@
 
 import { useLocale, useTranslations } from 'next-intl';
 import { usePathname, useRouter } from '@/i18n/routing';
+import { storeLocale } from '@/lib/locale';
 
 export default function LocaleToggle() {
   const t = useTranslations('lang');
@@ -10,6 +11,8 @@ export default function LocaleToggle() {
   const pathname = usePathname();
 
   const switchLocale = (newLocale: 'en' | 'fa') => {
+    // Remembered so the root redirect stops second-guessing the visitor.
+    storeLocale(newLocale);
     router.replace(pathname, { locale: newLocale });
   };
 
