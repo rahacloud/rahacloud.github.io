@@ -1354,6 +1354,29 @@ html[dir="rtl"] .btn.primary:hover::after {
   color: var(--ink-soft);
 }
 
+.office-item strong {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.office-region {
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--ink-soft);
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  padding: 0.1rem 0.5rem;
+}
+
+.office-status {
+  font-size: 0.85rem;
+  color: var(--accent);
+}
+
 /* Contact Form */
 .contact-form {
   background: transparent;

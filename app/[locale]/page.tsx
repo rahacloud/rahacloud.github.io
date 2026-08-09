@@ -45,6 +45,8 @@ type Project = {
 type Office = {
   label: string;
   city: string;
+  region?: string;
+  status?: string;
   district?: string;
   registrationNumber?: string;
   nationalId?: string;
@@ -474,8 +476,16 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
               </div>
               {offices.map((office) => (
                 <div key={office.label} className="contact-item office-item">
-                  <strong>{office.label}</strong>
+                  <strong>
+                    {office.label}
+                    {office.region && <span className="office-region">{office.region}</span>}
+                  </strong>
                   <span>{office.city}</span>
+                  {office.status && (
+                    <span className="office-status">
+                      {t('contact.labels.status')}: {office.status}
+                    </span>
+                  )}
                   {office.district && (
                     <span className="office-meta">
                       {t('contact.labels.district')}: {office.district}
