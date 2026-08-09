@@ -2,15 +2,21 @@
 
 import { useRouter } from 'next/navigation';
 import { useEffect } from 'react';
+import { detectLocale, readStoredLocale } from '@/lib/locale';
 
 export default function RootPage() {
   const router = useRouter();
 
   useEffect(() => {
-    const browserLang = navigator.language || navigator.languages?.[0] || 'en';
-    const locale = browserLang.startsWith('fa') ? 'fa' : 'en';
-    router.replace(`/${locale}`);
+    // An explicit choice from the language toggle always wins over detection.
+    router.replace(`/${readStoredLocale() ?? detectLocale()}`);
   }, [router]);
 
-  return null;
+  return (
+    <noscript>
+      <p>
+        <a href="/en">English</a> · <a href="/fa">فارسی</a>
+      </p>
+    </noscript>
+  );
 }
