@@ -2,62 +2,62 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
-    <loc>https://rahacloud.github.io/en</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.github.io/en"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://rahacloud.github.io/fa"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.github.io/en"/>
+    <loc>https://rahacloud.com/en</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.com/en"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://rahacloud.com/fa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.com/en"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://rahacloud.github.io/fa</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.github.io/en"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://rahacloud.github.io/fa"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.github.io/en"/>
+    <loc>https://rahacloud.com/fa</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.com/en"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://rahacloud.com/fa"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.com/en"/>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://rahacloud.github.io/en/pitch</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.github.io/en/pitch"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://rahacloud.github.io/fa/pitch"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.github.io/en/pitch"/>
+    <loc>https://rahacloud.com/en/pitch</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.com/en/pitch"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://rahacloud.com/fa/pitch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.com/en/pitch"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rahacloud.github.io/fa/pitch</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.github.io/en/pitch"/>
-    <xhtml:link rel="alternate" hreflang="fa" href="https://rahacloud.github.io/fa/pitch"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.github.io/en/pitch"/>
+    <loc>https://rahacloud.com/fa/pitch</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.com/en/pitch"/>
+    <xhtml:link rel="alternate" hreflang="fa" href="https://rahacloud.com/fa/pitch"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.com/en/pitch"/>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rahacloud.github.io/en/blog</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.github.io/en/blog"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.github.io/en/blog"/>
+    <loc>https://rahacloud.com/en/blog</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.com/en/blog"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.com/en/blog"/>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://rahacloud.github.io/en/blog/hello-world</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.github.io/en/blog/hello-world"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.github.io/en/blog/hello-world"/>
+    <loc>https://rahacloud.com/en/blog/hello-world</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.com/en/blog/hello-world"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.com/en/blog/hello-world"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rahacloud.github.io/en/blog/docker-swarm-vxlan-networking</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.github.io/en/blog/docker-swarm-vxlan-networking"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.github.io/en/blog/docker-swarm-vxlan-networking"/>
+    <loc>https://rahacloud.com/en/blog/docker-swarm-vxlan-networking</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.com/en/blog/docker-swarm-vxlan-networking"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.com/en/blog/docker-swarm-vxlan-networking"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://rahacloud.github.io/en/blog/docker-swarm-arvancloud-issues</loc>
-    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.github.io/en/blog/docker-swarm-arvancloud-issues"/>
-    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.github.io/en/blog/docker-swarm-arvancloud-issues"/>
+    <loc>https://rahacloud.com/en/blog/docker-swarm-arvancloud-issues</loc>
+    <xhtml:link rel="alternate" hreflang="en" href="https://rahacloud.com/en/blog/docker-swarm-arvancloud-issues"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://rahacloud.com/en/blog/docker-swarm-arvancloud-issues"/>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>

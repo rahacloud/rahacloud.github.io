@@ -1,6 +1,10 @@
 import { routing } from '@/i18n/routing';
 
-export const SITE_URL = 'https://rahacloud.github.io';
+// The public home of the site. GitHub Pages is the origin, but it is reached
+// through rahacloud.com (Arvan CDN in front), and Pages redirects the
+// rahacloud.github.io host here -- so every canonical, hreflang, and sitemap
+// URL has to name this domain rather than the origin behind it.
+export const SITE_URL = 'https://rahacloud.com';
 
 /**
  * Builds the canonical + hreflang block for one page.
