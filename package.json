@@ -19,7 +19,7 @@
     "@fontsource-variable/geist-mono": "^5.3.0",
     "gray-matter": "^4.0.3",
     "next": "^16.3.3",
-    "next-intl": "^4.14.1",
+    "next-intl": "^4.14.2",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
     "rehype-highlight": "^7.0.2",
