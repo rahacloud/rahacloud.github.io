@@ -1,7 +1,7 @@
 {
   "meta": {
-    "title": "Raha Cloud - Infrastructure, DevOps, Cloud",
-    "description": "We provide infrastructure and DevOps solutions based on AWS, Hetzner, and Arvancloud to reduce your team's operational overhead."
+    "title": "Cloud Cost Optimization & DevOps Consulting | Raha Cloud",
+    "description": "We cut cloud infrastructure costs by 40% on average with DevOps, Kubernetes and IaC on AWS, Hetzner and Arvancloud. Offices in Barcelona and Tehran."
   },
   "brand": {
     "name": "Raha Cloud",
@@ -74,7 +74,7 @@
     ]
   },
   "services": {
-    "title": "What we do",
+    "title": "Infrastructure & DevOps services",
     "subtitle": "End-to-end infrastructure and DevOps services with clear deliverables, lower costs, and higher reliability.",
     "items": [
       {

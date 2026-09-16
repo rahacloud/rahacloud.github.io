@@ -7,6 +7,21 @@ import { routing } from '@/i18n/routing';
 export const SITE_URL = 'https://rahacloud.com';
 
 /**
+ * Google Search Console ownership, for the HTML-tag method.
+ *
+ * DNS TXT verification is usually the better choice -- it covers every
+ * subdomain and protocol at once and survives a rebuild -- but the tag is here
+ * for the case where DNS is not reachable. Set GOOGLE_SITE_VERIFICATION in the
+ * build environment (a repository variable feeding the `pnpm build` step);
+ * unset, nothing is emitted.
+ */
+const googleSiteVerification = process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION?.trim();
+
+export function verification() {
+  return googleSiteVerification ? { verification: { google: googleSiteVerification } } : {};
+}
+
+/**
  * Builds the canonical + hreflang block for one page.
  *
  * Two rules drive this: hreflang annotations are ignored unless the URLs are

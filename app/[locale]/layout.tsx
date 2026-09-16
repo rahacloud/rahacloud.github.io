@@ -6,7 +6,7 @@ import ScrollToTop from '@/components/ScrollToTop';
 import SkipLink from '@/components/SkipLink';
 import StructuredData from '@/components/StructuredData';
 import { routing } from '@/i18n/routing';
-import { localeAlternates, SITE_URL } from '@/lib/metadata';
+import { localeAlternates, SITE_URL, verification } from '@/lib/metadata';
 
 // Local fonts
 import '@fontsource-variable/fraunces/opsz.css';
@@ -51,6 +51,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: t('description'),
       images: ['/og-image.png'],
     },
+    ...verification(),
     robots: {
       index: true,
       follow: true,

@@ -1,10 +1,10 @@
 import RootLocaleRedirect from '@/components/RootLocaleRedirect';
 import { routing } from '@/i18n/routing';
-import { SITE_URL } from '@/lib/metadata';
+import { SITE_URL, verification } from '@/lib/metadata';
 
-const TITLE = 'Raha Cloud - Infrastructure, DevOps, Cloud';
+const TITLE = 'Cloud Cost Optimization & DevOps Consulting | Raha Cloud';
 const DESCRIPTION =
-  "We provide infrastructure and DevOps solutions based on AWS, Hetzner, and Arvancloud to reduce your team's operational overhead.";
+  'We cut cloud infrastructure costs by 40% on average with DevOps, Kubernetes and IaC on AWS, Hetzner and Arvancloud. Offices in Barcelona and Tehran.';
 
 const LOCALE_NAMES: Record<string, string> = {
   en: 'English',
@@ -48,6 +48,7 @@ export const metadata = {
     description: DESCRIPTION,
     images: ['/og-image.png'],
   },
+  ...verification(),
   robots: { index: true, follow: true },
 };
 

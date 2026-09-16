@@ -30,6 +30,10 @@ jobs:
       - uses: pnpm/action-setup@v6
       - run: pnpm install --frozen-lockfile
       - run: pnpm build
+        env:
+          # Optional: set this repository variable to emit the Search Console
+          # ownership tag. Unset, nothing is emitted and the build is unchanged.
+          NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION: ${{ vars.GOOGLE_SITE_VERIFICATION }}
       - uses: actions/upload-pages-artifact@v5
         with:
           path: out
