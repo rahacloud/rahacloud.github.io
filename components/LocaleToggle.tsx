@@ -10,7 +10,7 @@ export default function LocaleToggle() {
   const router = useRouter();
   const pathname = usePathname();
 
-  const switchLocale = (newLocale: 'en' | 'fa') => {
+  const switchLocale = (newLocale: 'en' | 'fa' | 'es') => {
     // Remembered so the root redirect stops second-guessing the visitor.
     storeLocale(newLocale);
     router.replace(pathname, { locale: newLocale });
@@ -31,6 +31,13 @@ export default function LocaleToggle() {
         onClick={() => switchLocale('fa')}
       >
         {t('fa')}
+      </button>
+      <button
+        type="button"
+        className={locale === 'es' ? 'active' : ''}
+        onClick={() => switchLocale('es')}
+      >
+        {t('es')}
       </button>
     </fieldset>
   );

@@ -34,7 +34,7 @@ export async function generateMetadata({ params }: { params: Promise<{ locale: s
       description: t('description'),
       url: `${SITE_URL}/${locale}`,
       siteName: 'Raha Cloud',
-      locale: locale === 'fa' ? 'fa_IR' : 'en_US',
+      locale: locale === 'fa' ? 'fa_IR' : locale === 'es' ? 'es_ES' : 'en_US',
       type: 'website',
       images: [
         {
