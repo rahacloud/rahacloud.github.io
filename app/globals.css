@@ -292,6 +292,12 @@ main {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex: 0 0 auto;
+}
+
+.brand-text strong,
+.brand-text span {
+  white-space: nowrap;
 }
 
 .brand-mark {
@@ -320,6 +326,16 @@ main {
   gap: 1.2rem;
   font-size: 0.95rem;
   color: var(--ink-soft);
+}
+
+.nav-desktop {
+  flex: 0 1 auto;
+  gap: 0.8rem;
+  font-size: 0.9rem;
+}
+
+.nav-desktop a {
+  white-space: nowrap;
 }
 
 .nav a {
@@ -356,6 +372,7 @@ main {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex: 0 0 auto;
 }
 
 .desktop-only {
@@ -427,6 +444,14 @@ html[dir="rtl"] .mobile-menu {
 @media (min-width: 961px) {
   .mobile-menu,
   .mobile-menu-overlay {
+    display: none;
+  }
+  .header-inner {
+    gap: 1rem;
+  }
+  /* The nav leaves no room for the tagline at this density -- it still reads
+     in the hero, the footer and the page title. */
+  .brand-text span {
     display: none;
   }
 }
@@ -599,6 +624,13 @@ html[dir="rtl"] .btn.primary:hover::after {
   white-space: nowrap;
 }
 
+/* The desktop header is the tightest place this button appears. */
+@media (min-width: 961px) {
+  .header-actions .btn.small {
+    padding: 0.55rem 0.9rem;
+  }
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .btn.primary::after,
   .btn.ghost::after {
@@ -628,8 +660,10 @@ html[dir="rtl"] .btn.primary:hover::after {
 .locale-toggle button {
   border: none;
   background: transparent;
-  padding: 0.45rem 0.9rem;
-  font-size: 0.85rem;
+  padding: 0.45rem 0.75rem;
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
   cursor: pointer;
   color: var(--ink-soft);
   transition: 0.2s ease;
@@ -1711,6 +1745,12 @@ html[dir="rtl"] .scroll-to-top {
   }
 }
 
+@media (max-width: 1180px) {
+  .desktop-only {
+    display: none;
+  }
+}
+
 @media (max-width: 720px) {
   .header-inner {
     gap: 0.75rem;
@@ -1745,8 +1785,7 @@ html[dir="rtl"] .scroll-to-top {
     gap: 0.4rem;
   }
   .locale-toggle button {
-    padding: 0.4rem 0.7rem;
-    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
   }
 }
 
@@ -1856,10 +1895,35 @@ html[dir="rtl"] .scroll-to-top {
   }
 }
 
-@media (max-width: 360px) {
+@media (max-width: 380px) {
   .header-actions .theme-toggle {
     padding: 0.4rem;
   }
+  .header-inner {
+    gap: 0.5rem;
+  }
+  .brand {
+    gap: 0.5rem;
+  }
+  .brand-mark {
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+  }
+  .brand-text strong {
+    font-size: 0.85rem;
+    letter-spacing: 0.04em;
+  }
+  .locale-toggle button {
+    padding: 0.4rem 0.4rem;
+    font-size: 0.7rem;
+  }
+  .mobile-menu-toggle {
+    padding: 0.35rem;
+  }
+}
+
+@media (max-width: 360px) {
   .squad-card {
     gap: 0.6rem;
   }
