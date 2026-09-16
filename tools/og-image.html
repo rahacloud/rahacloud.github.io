@@ -1,0 +1,73 @@
+<!doctype html>
+<!--
+  Source for public/og-image.png -- the 1200x630 card every link preview shows.
+  Regenerate after editing (fonts need a server, file:// will not load them):
+
+    python3 -m http.server 3100    # from the repo root
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+      --headless --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
+      --screenshot=public/og-image.png --window-size=1200,630 \
+      http://localhost:3100/tools/og-image.html
+-->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+
+<style>
+  @font-face{font-family:"Fraunces";src:url("../node_modules/@fontsource-variable/fraunces/files/fraunces-latin-opsz-normal.woff2") format("woff2");font-weight:100 900;}
+  @font-face{font-family:"Geist";src:url("../node_modules/@fontsource-variable/geist/files/geist-latin-wght-normal.woff2") format("woff2");font-weight:100 900;}
+  @font-face{font-family:"GeistMono";src:url("../node_modules/@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2") format("woff2");font-weight:100 900;}
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{width:1200px;height:630px;overflow:hidden}
+  .card{
+    width:1200px;height:630px;background:#14171d;color:#f0ebe3;
+    padding:72px 80px;display:flex;flex-direction:column;justify-content:space-between;
+    position:relative;font-family:"Geist",system-ui,sans-serif;
+  }
+  .card::before{
+    content:"";position:absolute;inset:0;
+    background:radial-gradient(900px 500px at 88% 8%, rgba(240,122,82,.20), transparent 60%),
+               radial-gradient(700px 420px at 4% 96%, rgba(45,212,191,.13), transparent 62%);
+  }
+  .row{position:relative;display:flex;align-items:center;gap:18px}
+  .logo{width:60px;height:60px;border-radius:18px;object-fit:cover}
+  .wordmark{font-size:26px;font-weight:600;letter-spacing:.14em;text-transform:uppercase}
+  .mid{position:relative}
+  .eyebrow{
+    font-family:"GeistMono",ui-monospace,monospace;font-size:19px;letter-spacing:.22em;
+    text-transform:uppercase;color:#2dd4bf;display:flex;align-items:center;gap:16px;margin-bottom:26px;
+  }
+  .eyebrow::before{content:"";width:52px;height:1px;background:#2dd4bf;opacity:.85}
+  h1{
+    font-family:"Fraunces",Georgia,serif;font-size:84px;line-height:1.03;
+    font-weight:500;letter-spacing:-.015em;max-width:15ch;
+  }
+  h1 em{font-style:normal;color:#f07a52}
+  .sub{margin-top:26px;font-size:25px;line-height:1.5;color:#b8bcc6;max-width:30ch}
+  .foot{
+    position:relative;display:flex;align-items:center;justify-content:space-between;
+    padding-top:26px;border-top:1px solid rgba(255,255,255,.14);
+    font-family:"GeistMono",ui-monospace,monospace;font-size:19px;color:#8a8f9d;letter-spacing:.06em;
+  }
+  .stack{display:flex;gap:26px}
+  .stack span{color:#b8bcc6}
+</style>
+</head>
+<body>
+  <div class="card">
+    <div class="row">
+      <img class="logo" src="../public/logo.png" alt="">
+      <div class="wordmark">Raha Cloud</div>
+    </div>
+    <div class="mid">
+      <div class="eyebrow">Infrastructure · DevOps · Cloud</div>
+      <h1>Infrastructure that <em>runs itself.</em></h1>
+      <div class="sub">We cut the cost and the operational load of running your infrastructure.</div>
+    </div>
+    <div class="foot">
+      <div class="stack"><span>AWS</span><span>Hetzner</span><span>Arvancloud</span><span>Kubernetes</span></div>
+      <div>rahacloud.com</div>
+    </div>
+  </div>
+</body>
+</html>
