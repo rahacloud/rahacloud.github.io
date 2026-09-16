@@ -29,7 +29,8 @@ export function storeLocale(locale: Locale): void {
 }
 
 /**
- * Guesses whether the visitor is in Iran, to serve Persian by default.
+ * Guesses whether the visitor is in Iran or Spain, to serve Persian or
+ * Spanish by default instead of English.
  *
  * The site is a static export, so nothing in the stack ever sees the visitor's
  * IP address and true geolocation is not available. Device timezone plus
@@ -47,6 +48,10 @@ export function detectLocale(): Locale {
 
   const languages = navigator.languages?.length ? navigator.languages : [navigator.language];
   const prefersPersian = languages.some((language) => language?.toLowerCase().startsWith('fa'));
+  const prefersSpanish = languages.some((language) => language?.toLowerCase().startsWith('es'));
 
-  return timeZone === 'Asia/Tehran' || prefersPersian ? 'fa' : routing.defaultLocale;
+  if (timeZone === 'Asia/Tehran' || prefersPersian) return 'fa';
+  if (timeZone === 'Europe/Madrid' || prefersSpanish) return 'es';
+
+  return routing.defaultLocale;
 }

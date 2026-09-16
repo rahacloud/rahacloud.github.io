@@ -15,7 +15,7 @@ export default function RootPage() {
   return (
     <noscript>
       <p>
-        <a href="/en">English</a> · <a href="/fa">فارسی</a>
+        <a href="/en">English</a> · <a href="/fa">فارسی</a> · <a href="/es">Español</a>
       </p>
     </noscript>
   );

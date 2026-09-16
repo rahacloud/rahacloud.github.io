@@ -1,0 +1,385 @@
+{
+  "meta": {
+    "title": "Raha Cloud - Infraestructura, DevOps, Cloud",
+    "description": "Ofrecemos soluciones de infraestructura y DevOps basadas en AWS, Hetzner y Arvancloud para reducir la carga operativa de tu equipo."
+  },
+  "brand": {
+    "name": "Raha Cloud",
+    "nameFa": "Raha Cloud",
+    "tagline": "Infraestructura, DevOps y Cloud"
+  },
+  "lang": {
+    "en": "English",
+    "fa": "Persian",
+    "es": "Español"
+  },
+  "nav": {
+    "home": "Inicio",
+    "about": "Nosotros",
+    "services": "Servicios",
+    "process": "Proceso",
+    "projects": "Proyectos",
+    "team": "Equipo",
+    "contact": "Contacto",
+    "blog": "Blog"
+  },
+  "hero": {
+    "eyebrow": "Empresa",
+    "title": "Infraestructura que funciona sola.",
+    "subtitle": "Raha Cloud ayuda a los equipos a reducir costes de mantenimiento y gestión de infraestructura con soluciones DevOps sobre AWS, Hetzner y Arvancloud.",
+    "ctaPrimary": "Construyamos juntos",
+    "ctaSecondary": "Ver servicios",
+    "note": "Oficinas en Barcelona y Teherán — con clientes en todo el mundo",
+    "pillarsTitle": "Socios Cloud",
+    "pillars": [
+      {
+        "title": "AWS",
+        "desc": "Infraestructura cloud de nivel empresarial y servicios gestionados."
+      },
+      {
+        "title": "Hetzner",
+        "desc": "Servidores dedicados y soluciones cloud a precios competitivos."
+      },
+      {
+        "title": "Arvancloud",
+        "desc": "CDN regional, cloud y servicios edge para Oriente Medio y el Norte de África."
+      },
+      {
+        "title": "Hamravesh",
+        "desc": "Kubernetes gestionado e infraestructura PaaS iraní."
+      }
+    ]
+  },
+  "stats": [
+    {
+      "value": "40%",
+      "label": "Reducción media de costes"
+    },
+    {
+      "value": "99.9%",
+      "label": "SLA de disponibilidad"
+    },
+    {
+      "value": "24/7",
+      "label": "Monitorización y soporte"
+    }
+  ],
+  "about": {
+    "title": "Expertos en infraestructura, optimizadores de costes",
+    "body": "Somos un equipo de ingenieros DevOps y arquitectos cloud. Ayudamos a los equipos a construir infraestructura fiable mientras reducimos la carga de mantenimiento y operaciones.",
+    "highlights": [
+      "Diseño e implementación de arquitectura multicloud",
+      "Pipelines de CI/CD y flujos de trabajo GitOps",
+      "Infraestructura como código con Terraform y Ansible"
+    ]
+  },
+  "services": {
+    "title": "Qué hacemos",
+    "subtitle": "Servicios integrales de infraestructura y DevOps con resultados claros, menores costes y mayor fiabilidad.",
+    "items": [
+      {
+        "title": "Infraestructura Cloud",
+        "desc": "Arquitectura y landing zones con bases de seguridad y planes de despliegue en AWS, Hetzner o Arvancloud.",
+        "tags": ["AWS", "Hetzner", "Arvancloud"]
+      },
+      {
+        "title": "DevOps y CI/CD",
+        "desc": "Pipelines estandarizados con plantillas, controles de calidad y rutas seguras de reversión.",
+        "tags": ["GitLab CI", "GitHub Actions", "ArgoCD"]
+      },
+      {
+        "title": "Kubernetes",
+        "desc": "Clústeres de producción con autoescalado, controles de políticas y aislamiento multiinquilino seguro.",
+        "tags": ["Kubernetes", "Docker", "Helm"]
+      },
+      {
+        "title": "Monitorización y Observabilidad",
+        "desc": "Dashboards, SLOs y guías de alertas para reducir el tiempo de recuperación ante incidentes.",
+        "tags": ["Prometheus", "Grafana", "ELK"]
+      },
+      {
+        "title": "Herramientas Autoalojadas",
+        "desc": "GitLab, Sentry, PostgreSQL privados y más, con actualizaciones, copias de seguridad y hardening incluidos.",
+        "tags": ["GitLab", "Sentry", "PostgreSQL"]
+      },
+      {
+        "title": "Orquestación de Contenedores",
+        "desc": "Orquestación a la medida: Swarm o Docker Compose multinodo con hardening y actualizaciones.",
+        "tags": ["Kubernetes", "Docker Swarm", "Docker Compose"]
+      }
+    ]
+  },
+  "process": {
+    "title": "Cómo trabajamos",
+    "steps": [
+      {
+        "title": "Evaluar",
+        "desc": "Auditamos tu infraestructura actual e identificamos oportunidades de optimización."
+      },
+      {
+        "title": "Diseñar",
+        "desc": "Diseñamos infraestructura escalable y rentable adaptada a tus necesidades."
+      },
+      {
+        "title": "Automatizar",
+        "desc": "Implementamos IaC, CI/CD y monitorización para minimizar las operaciones manuales."
+      }
+    ]
+  },
+  "projects": {
+    "title": "Proyectos recientes",
+    "items": [
+      {
+        "title": "Plataforma E-commerce",
+        "desc": "Migración de on-premise a AWS con autoescalado y CDN.",
+        "result": "60% de reducción en costes de infraestructura"
+      },
+      {
+        "title": "Startup Fintech",
+        "desc": "Configuración de clúster Kubernetes con pipeline de despliegue GitOps.",
+        "result": "Tiempo de despliegue reducido de horas a minutos"
+      },
+      {
+        "title": "Empresa de Medios",
+        "desc": "Configuración híbrida Hetzner + Arvancloud para streaming de vídeo.",
+        "result": "45% menos costes de ancho de banda"
+      }
+    ]
+  },
+  "clients": {
+    "title": "Equipos que confían en Raha",
+    "bitbarg": "Bitbarg Online Exchange",
+    "hatchup": "Hatchup Capital",
+    "aveehealth": "Avee Health Telemedicine",
+    "talaland": "Talaland"
+  },
+  "team": {
+    "title": "Conoce al Equipo",
+    "subtitle": "Las personas detrás de Raha Cloud",
+    "members": [
+      {
+        "name": "Elaheh Dastan",
+        "role": "CEO y Fundadora",
+        "username": "elaheh-dastan",
+        "photo": "/team/elaheh-dastan.jpg",
+        "bio": "Arquitecta cloud y estratega de negocio apasionada por construir soluciones escalables.",
+        "social": {
+          "github": "elaheh-dastan",
+          "linkedin": "elaheh-dastan"
+        }
+      },
+      {
+        "name": "Parham Alvani",
+        "role": "CTO",
+        "username": "1995parham",
+        "photo": "/team/1995parham.jpg",
+        "bio": "Ingeniero DevOps y entusiasta del código abierto. Construyendo infraestructura que simplemente funciona.",
+        "social": {
+          "github": "1995parham",
+          "youtube": "@parhamalvani",
+          "website": "https://1995parham.me"
+        }
+      }
+    ]
+  },
+  "testimonial": {},
+  "contact": {
+    "title": "Optimicemos tu infraestructura",
+    "subtitle": "Cuéntanos sobre tu configuración actual. Te responderemos en un plazo de dos días hábiles.",
+    "email": "elahe.dstn@gmail.com",
+    "phone": "+98 935 225 7378",
+    "whatsapp": "+989352257378",
+    "telegram": "+989352257378",
+    "address": "Barcelona y Teherán — con clientes en todo el mundo",
+    "hours": "Lunes a viernes, 9:00-18:00 CET · 11:30-20:30 IRST",
+    "cta": "Agendar una llamada",
+    "offices": [
+      {
+        "label": "Oficina de Barcelona",
+        "city": "Barcelona, España",
+        "region": "Europa",
+        "status": "Registro en trámite"
+      },
+      {
+        "label": "Oficina de Teherán",
+        "city": "Teherán, Irán",
+        "region": "Oriente Medio",
+        "district": "Tohid",
+        "registrationNumber": "668767",
+        "nationalId": "14015174107",
+        "phone": "+982166572481",
+        "phoneDisplay": "+98 21 6657 2481"
+      }
+    ],
+    "labels": {
+      "email": "Correo",
+      "phone": "Teléfono",
+      "whatsapp": "WhatsApp",
+      "telegram": "Telegram",
+      "github": "GitHub",
+      "location": "Ubicación",
+      "offices": "Oficinas",
+      "district": "Distrito",
+      "registrationNumber": "N.º de registro",
+      "nationalId": "DNI/NIF",
+      "status": "Estado",
+      "hours": "Horario"
+    }
+  },
+  "footer": {
+    "copyright": "© 2026 Raha Cloud. Todos los derechos reservados."
+  },
+  "contactForm": {
+    "name": "Nombre",
+    "namePlaceholder": "Tu nombre",
+    "email": "Correo",
+    "emailPlaceholder": "tu@email.com",
+    "company": "Empresa (opcional)",
+    "companyPlaceholder": "Tu empresa",
+    "message": "Mensaje",
+    "messagePlaceholder": "Cuéntanos sobre tu proyecto...",
+    "send": "Enviar vía GitHub",
+    "sendViaEmail": "Enviar vía Email",
+    "sending": "Enviando...",
+    "sent": "¡Mensaje enviado!"
+  },
+  "testimonials": {
+    "title": "Lo que dicen nuestros clientes",
+    "subtitle": "Escucha a los equipos con los que hemos trabajado"
+  },
+  "pitch": {
+    "nav": "Presentación",
+    "metaTitle": "Presentación | Raha Cloud",
+    "metaDescription": "Visión general de Raha Cloud — infraestructura y DevOps que reducen costes y carga operativa en AWS, Hetzner y Arvancloud.",
+    "cover": {
+      "eyebrow": "Visión para inversores",
+      "title": "Hacemos que la infraestructura sea invisible.",
+      "subtitle": "Raha Cloud es el equipo DevOps que diseña, automatiza y opera infraestructura multicloud — para que los equipos de producto envíen código en lugar de apagar incendios.",
+      "scroll": "Desplázate para explorar"
+    },
+    "problem": {
+      "eyebrow": "El problema",
+      "title": "La infraestructura no debería ser un impuesto sobre tu equipo.",
+      "subtitle": "Los equipos invierten tiempo y presupuesto en mantener viva la infraestructura en lugar de construir producto. Nosotros les quitamos ese peso.",
+      "items": [
+        {
+          "title": "Carga de mantenimiento",
+          "desc": "Los ingenieros dedican sus mejores horas a parchear servidores y vigilar pipelines en lugar de lanzar producto."
+        },
+        {
+          "title": "Complejidad multicloud",
+          "desc": "Combinar AWS, Hetzner y proveedores regionales se convierte en una red frágil y sin documentar."
+        },
+        {
+          "title": "Operaciones poco fiables",
+          "desc": "Sin SLOs, dashboards ni runbooks, cada incidente se convierte en un simulacro de incendio."
+        },
+        {
+          "title": "Costes descontrolados",
+          "desc": "Recursos sobredimensionados, inactivos y mal tarifados inflan silenciosamente la factura cloud mensual."
+        }
+      ]
+    },
+    "vision": {
+      "eyebrow": "Visión",
+      "title": "Todo equipo merece infraestructura que funcione sola.",
+      "body": "El cloud se fragmenta entre hyperscalers globales y proveedores regionales, y la carga operativa crece exponencialmente. Creemos que la infraestructura debería ser un servicio invisible — fiable, automatizado y económico por defecto. Con oficinas en España e Irán, Raha está construyendo el equipo que asume esa capa para empresas en Europa, Oriente Medio y más allá.",
+      "points": [
+        "El multicloud es el nuevo estándar, no la excepción.",
+        "Las operaciones deben ser automatizadas, no heroicas.",
+        "La disciplina de costes es una práctica de ingeniería, no una hoja de cálculo."
+      ]
+    },
+    "solution": {
+      "eyebrow": "Solución",
+      "title": "Un solo equipo para todo el ciclo de vida de la infraestructura.",
+      "subtitle": "Desde la arquitectura hasta las operaciones del día a día, ofrecemos DevOps integral con resultados claros, menores costes y mayor fiabilidad."
+    },
+    "market": {
+      "eyebrow": "Oportunidad",
+      "title": "Una brecha creciente entre la complejidad del cloud y el talento interno.",
+      "body": "Cada empresa en crecimiento adopta el cloud más rápido de lo que puede contratar talento senior en infraestructura. Esa brecha es mayor donde deben coexistir proveedores globales y regionales — exactamente la realidad multicloud en la que nos especializamos. Nuestras dos oficinas nos sitúan en ambos lados de esa brecha.",
+      "segments": [
+        {
+          "title": "España y la UE",
+          "desc": "Startups y scale-ups europeas que consolidan en AWS y Hetzner sin contratar un equipo de plataforma interno completo.",
+          "branch": "Oficina de Barcelona"
+        },
+        {
+          "title": "Irán",
+          "desc": "Empresas que conectan proveedores locales como Arvancloud y Hamravesh con infraestructura global bajo restricciones estrictas.",
+          "branch": "Oficina de Teherán"
+        },
+        {
+          "title": "Oriente Medio y Global",
+          "desc": "Negocios regionales que escalan en AWS y proveedores edge, atendidos desde la oficina que mejor se ajusta a su zona horaria y necesidades de cumplimiento.",
+          "branch": "Ambas oficinas"
+        }
+      ]
+    },
+    "traction": {
+      "eyebrow": "Tracción",
+      "title": "Resultados que los equipos pueden medir."
+    },
+    "model": {
+      "eyebrow": "Modelo de negocio",
+      "title": "Ingresos recurrentes sobre proyectos de alta confianza.",
+      "streams": [
+        {
+          "title": "Proyectos puntuales",
+          "desc": "Arquitectura, migración y configuración de plataforma con alcances fijos basados en resultados."
+        },
+        {
+          "title": "Operaciones gestionadas",
+          "desc": "Cuotas mensuales por monitorización, guardias, actualizaciones y fiabilidad — ingresos recurrentes predecibles."
+        },
+        {
+          "title": "Optimización de costes",
+          "desc": "Reducimos el gasto cloud y compartimos el ahorro, alineando nuestro beneficio con el del cliente."
+        }
+      ]
+    },
+    "why": {
+      "eyebrow": "Por qué Raha",
+      "title": "Por qué ganamos.",
+      "items": [
+        {
+          "title": "Multicloud por defecto",
+          "desc": "Diseñamos sobre AWS, Hetzner, Arvancloud y Hamravesh — ubicando cada carga de trabajo donde funciona mejor y más barato."
+        },
+        {
+          "title": "Automatización primero",
+          "desc": "Todo como código: Terraform, Ansible, CI/CD y GitOps para que la infraestructura sea repetible y autorreparable."
+        },
+        {
+          "title": "Dos oficinas, un equipo",
+          "desc": "Nuestra empresa registrada en Irán y nuestra próxima oficina en España nos permiten contratar, facturar y dar soporte a clientes en Oriente Medio y Europa con contexto local y cumplimiento normativo."
+        },
+        {
+          "title": "Ingeniería centrada en costes",
+          "desc": "Redimensionamos, consolidamos y rediseñamos para reducir el gasto — típicamente un 40% — sin sacrificar fiabilidad."
+        }
+      ],
+      "partnersNote": "Experiencia profunda y práctica en las plataformas que realmente usan nuestros clientes:"
+    },
+    "closing": {
+      "eyebrow": "La propuesta",
+      "title": "Construyamos juntos infraestructura que funcione sola.",
+      "subtitle": "Estamos haciendo crecer nuestra base de clientes, red de socios y equipo. Si operas infraestructura — o inviertes en los equipos que lo hacen — hablemos.",
+      "cta": "Agendar una llamada",
+      "ctaSecondary": "Escríbenos"
+    },
+    "deck": {
+      "cover": "Intro",
+      "vision": "Visión",
+      "problem": "Problema",
+      "solution": "Solución",
+      "market": "Mercado",
+      "traction": "Tracción",
+      "model": "Modelo",
+      "why": "Por qué nosotros",
+      "team": "Equipo",
+      "closing": "Propuesta"
+    }
+  }
+}
