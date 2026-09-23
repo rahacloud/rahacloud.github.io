@@ -322,6 +322,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 />
                 <span className="squad-name">{t('clients.talaland')}</span>
               </a>
+              <a
+                href="https://www.azki.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="squad-card"
+              >
+                <Image
+                  src="/logos/azki.jpg"
+                  alt={t('clients.azki')}
+                  width={64}
+                  height={64}
+                  className="squad-logo"
+                />
+                <span className="squad-name">{t('clients.azki')}</span>
+              </a>
             </div>
           </div>
         </section>
