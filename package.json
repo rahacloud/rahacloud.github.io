@@ -2,7 +2,7 @@
   "name": "rahacloud",
   "version": "0.1.0",
   "private": true,
-  "packageManager": "pnpm@10.34.5",
+  "packageManager": "pnpm@10.34.6",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -18,8 +18,8 @@
     "@fontsource-variable/geist": "^5.3.0",
     "@fontsource-variable/geist-mono": "^5.3.0",
     "gray-matter": "^4.0.3",
-    "next": "^16.3.6",
-    "next-intl": "^4.14.7",
+    "next": "^16.3.8",
+    "next-intl": "^4.14.9",
     "react": "^19.3.0",
     "react-dom": "^19.3.0",
     "rehype-highlight": "^7.0.2",
@@ -30,9 +30,9 @@
     "vazirmatn": "^33.0.3"
   },
   "devDependencies": {
-    "@biomejs/biome": "^2.5.14",
-    "@next/bundle-analyzer": "^16.3.6",
-    "@types/node": "^26.6.2",
+    "@biomejs/biome": "^2.5.15",
+    "@next/bundle-analyzer": "^16.3.8",
+    "@types/node": "^26.6.4",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "typescript": "^7.0.2"
