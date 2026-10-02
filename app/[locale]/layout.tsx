@@ -72,7 +72,7 @@ const organizationData = {
     'Infrastructure and DevOps solutions based on AWS, Hetzner, and Arvancloud to reduce operational overhead.',
   url: 'https://rahacloud.com',
   logo: 'https://rahacloud.com/logo.png',
-  email: 'elahe.dstn@gmail.com',
+  email: 'root@rahacloud.com',
   telephone: '+98 935 225 7378',
   addresses: [
     {

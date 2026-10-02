@@ -42,7 +42,7 @@ ${formData.message}
     const body = encodeURIComponent(
       `Name: ${formData.name}\nEmail: ${formData.email}\nCompany: ${formData.company || 'Not provided'}\n\nMessage:\n${formData.message}`
     );
-    window.location.href = `mailto:elahe.dstn@gmail.com?subject=${subject}&body=${body}`;
+    window.location.href = `mailto:root@rahacloud.com?subject=${subject}&body=${body}`;
   };
 
   const handleSubmit = async (e: React.FormEvent) => {
