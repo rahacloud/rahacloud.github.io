@@ -337,6 +337,21 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                 />
                 <span className="squad-name">{t('clients.azki')}</span>
               </a>
+              <a
+                href="https://solico-group.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="squad-card"
+              >
+                <Image
+                  src="/logos/solico.jpg"
+                  alt={t('clients.solico')}
+                  width={64}
+                  height={64}
+                  className="squad-logo"
+                />
+                <span className="squad-name">{t('clients.solico')}</span>
+              </a>
             </div>
           </div>
         </section>
