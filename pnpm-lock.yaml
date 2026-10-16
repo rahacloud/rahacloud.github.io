@@ -55,8 +55,8 @@ importers:
         specifier: ^2.5.15
         version: 2.5.15
       '@next/bundle-analyzer':
-        specifier: ^16.3.8
-        version: 16.3.8
+        specifier: ^16.4.0
+        version: 16.4.0
       '@types/node':
         specifier: ^26.6.4
         version: 26.6.4
@@ -334,8 +334,8 @@ packages:
     cpu: [x64]
     os: [win32]
 
-  '@next/bundle-analyzer@16.3.8':
-    resolution: {integrity: sha512-8VBk5/pjANz7fxbQZrDwUMTAs598Vckb4PE7BSYrDIPthJskKCXEHOK+WEMgDD6X2xWlKjrXPo2r41N/G1azSw==}
+  '@next/bundle-analyzer@16.4.0':
+    resolution: {integrity: sha512-z4iuh6QGVhPKa+Pq/e6WO1d5jFeVGDtjaVY2PVnguTyGTNY/Tw/ozRAHJoaQUyiKEcREot8iQnvmuIOkD+1wyw==}
 
   '@next/env@16.3.8':
     resolution: {integrity: sha512-Al9zqHVV7TJv0eFuOU4U7Lvv74PTih4Ch63sk2xCIpSTkE3udFnaOcnzP2lQVymiL7yS9Cj2iClUXlR3EQ5sEw==}
@@ -729,8 +729,8 @@ packages:
     resolution: {integrity: sha512-HEHNfbars9v4pgpW6SO1KSPkfoS0xVOM/9UzkJltjlsHZmJasxg8aXkuZa7SMf8vKGIBhpUsPluQSqhJFCqebw==}
     engines: {node: '>=0.4.0'}
 
-  acorn@8.18.0:
-    resolution: {integrity: sha512-lGq+9yr1/GuAWaVYIHRjvvySG5/4VfKIvC8EWxStPdcDh/Ka7FG3twP6v4d5BkravUilhIAsG4Qj83t02LWUPQ==}
+  acorn@8.19.0:
+    resolution: {integrity: sha512-oJlA3XiRm7Cyk6qFD2Jn8ak9B7jSy0qy00ADO3+8dpT0LSjFihQYv4C02LFCSYJV3Q37xYwwRy5m+IpIiUzqWw==}
     engines: {node: '>=0.4.0'}
     hasBin: true
 
@@ -1380,7 +1380,7 @@ snapshots:
   '@img/sharp-win32-x64@0.35.5':
     optional: true
 
-  '@next/bundle-analyzer@16.3.8':
+  '@next/bundle-analyzer@16.4.0':
     dependencies:
       webpack-bundle-analyzer: 4.10.1
     transitivePeerDependencies:
@@ -1630,9 +1630,9 @@ snapshots:
 
   acorn-walk@8.3.5:
     dependencies:
-      acorn: 8.18.0
+      acorn: 8.19.0
 
-  acorn@8.18.0: {}
+  acorn@8.19.0: {}
 
   argparse@1.0.10:
     dependencies:
@@ -2220,7 +2220,7 @@ snapshots:
   webpack-bundle-analyzer@4.10.1:
     dependencies:
       '@discoveryjs/json-ext': 0.5.7
-      acorn: 8.18.0
+      acorn: 8.19.0
       acorn-walk: 8.3.5
       commander: 7.2.0
       debounce: 1.2.1
