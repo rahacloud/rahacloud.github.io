@@ -32,7 +32,7 @@
   "devDependencies": {
     "@biomejs/biome": "^2.5.15",
     "@next/bundle-analyzer": "^16.4.0",
-    "@types/node": "^26.6.4",
+    "@types/node": "^26.6.5",
     "@types/react": "^19.3.0",
     "@types/react-dom": "^19.3.0",
     "typescript": "^7.0.2"
