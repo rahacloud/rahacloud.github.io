@@ -73,7 +73,7 @@ const organizationData = {
   url: 'https://rahacloud.com',
   logo: 'https://rahacloud.com/logo.png',
   email: 'root@rahacloud.com',
-  telephone: '+98 935 225 7378',
+  telephone: '+34 662 34 55 49',
   addresses: [
     {
       city: 'Barcelona',

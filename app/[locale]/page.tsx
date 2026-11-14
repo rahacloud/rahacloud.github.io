@@ -490,7 +490,7 @@ export default async function HomePage({ params }: { params: Promise<{ locale: s
                   rel="noopener noreferrer"
                 >
                   <TelegramIcon />
-                  <bdi>{t('contact.phone')}</bdi>
+                  <bdi>@{t('contact.telegram')}</bdi>
                 </a>
               </div>
               <div className="contact-item">
