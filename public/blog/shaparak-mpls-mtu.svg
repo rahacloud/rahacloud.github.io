@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 300" width="640" height="300" role="img" aria-labelledby="t d">
+  <title id="t">Why a GRE MTU of 1400 does not fit</title>
+  <desc id="d">With a GRE MTU of 1400, GRE, ESP, UDP and IP headers bring a full packet to 1504 bytes, past the pod network's 1450. With 1300 it is 1392 bytes and fits.</desc>
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; fill: #f0ebe3; }
+    .h { font-size: 14px; font-weight: 600; }
+    .s { font-size: 12.5px; fill: #b8bcc6; }
+    .bad { font-size: 12.5px; fill: #ff7b72; }
+    .ok { font-size: 12.5px; fill: #6cc28a; }
+    .in { font-size: 12.5px; fill: #f0ebe3; }
+    .lim { font-size: 12px; fill: #f07a52; }
+  </style>
+  <rect width="640" height="300" rx="12" fill="#1b1e26"/>
+
+  <line x1="564" y1="42" x2="564" y2="216" stroke="#f07a52" stroke-width="1.5" stroke-dasharray="4 4"/>
+  <text class="lim" x="558" y="34" text-anchor="end">pod network limit: 1450 bytes</text>
+
+  <!-- 1400 -->
+  <text class="h" x="24" y="60">GRE MTU 1400</text>
+  <rect x="24" y="70" width="19.4" height="34" fill="#7aa2d6"/>
+  <rect x="43.4" y="70" width="8.9" height="34" fill="#b48ead"/>
+  <rect x="52.3" y="70" width="521.2" height="34" fill="#3a4252" stroke="#5a637a"/>
+  <rect x="573.5" y="70" width="10.4" height="34" fill="#d8a657"/>
+  <rect x="564" y="70" width="20" height="34" fill="#e5534b" opacity="0.55"/>
+  <text class="in" x="300" y="92" text-anchor="middle">1400</text>
+  <text class="bad" x="24" y="126">1504 bytes on the wire: too big, large OSPF packets never arrive</text>
+
+  <!-- 1300 -->
+  <text class="h" x="24" y="166">GRE MTU 1300</text>
+  <rect x="24" y="176" width="19.4" height="34" fill="#7aa2d6"/>
+  <rect x="43.4" y="176" width="8.9" height="34" fill="#b48ead"/>
+  <rect x="52.3" y="176" width="484" height="34" fill="#3a4252" stroke="#5a637a"/>
+  <rect x="536.3" y="176" width="6" height="34" fill="#d8a657"/>
+  <text class="in" x="294" y="198" text-anchor="middle">1300</text>
+  <text class="ok" x="24" y="232">1392 bytes on the wire: fits</text>
+
+  <!-- legend -->
+  <rect x="24" y="258" width="10" height="10" fill="#7aa2d6"/>
+  <text class="s" x="40" y="267">IP + UDP + ESP (52)</text>
+  <rect x="180" y="258" width="10" height="10" fill="#b48ead"/>
+  <text class="s" x="196" y="267">GRE + inner IP (24)</text>
+  <rect x="336" y="258" width="10" height="10" fill="#3a4252" stroke="#5a637a"/>
+  <text class="s" x="352" y="267">packet into GRE</text>
+  <rect x="470" y="258" width="10" height="10" fill="#d8a657"/>
+  <text class="s" x="486" y="267">ESP pad + ICV</text>
+</svg>

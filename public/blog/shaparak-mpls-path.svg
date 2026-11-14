@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 716" width="640" height="716" role="img" aria-labelledby="t d">
+  <title id="t">The path from a gold platform's backend to ZarPayesh</title>
+  <desc id="d">The backend calls an nginx gateway. In the same pod a tunnel container applies NAT, GRE, IPsec and OSPF. The pod's traffic goes over the cloud provider's network and the MPLS line to Shaparak's edge router, which filters it before ZarPayesh.</desc>
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse">
+      <path d="M0 0 L10 5 L0 10 z" fill="#8a8f9d"/>
+    </marker>
+  </defs>
+  <style>
+    text { font-family: system-ui, -apple-system, "Segoe UI", sans-serif; fill: #f0ebe3; }
+    .h { font-size: 15px; font-weight: 600; }
+    .s { font-size: 12.5px; fill: #b8bcc6; }
+    .r { font-size: 13px; }
+    .n { font-size: 12px; fill: #8a8f9d; }
+    .o { font-size: 12.5px; fill: #f07a52; font-weight: 600; }
+    .box { fill: #252a35; stroke: #3a4050; stroke-width: 1; }
+    .row { fill: #2d3340; stroke: #454c5e; stroke-width: 1; }
+    .arrow { stroke: #8a8f9d; stroke-width: 1.5; fill: none; }
+  </style>
+  <rect width="640" height="716" rx="12" fill="#1b1e26"/>
+
+  <!-- application -->
+  <rect class="box" x="24" y="24" width="476" height="52" rx="8"/>
+  <text class="h" x="40" y="46">Your backend</text>
+  <text class="s" x="40" y="65">calls the gateway over HTTPS with a key (a CDN in front is optional)</text>
+  <line class="arrow" x1="262" y1="76" x2="262" y2="98" marker-end="url(#arr)"/>
+
+  <!-- gateway pod -->
+  <rect x="24" y="100" width="476" height="352" rx="10" fill="none" stroke="#f07a52" stroke-width="1.5" stroke-dasharray="6 5"/>
+  <text class="o" x="40" y="121">Gateway pod · one replica</text>
+
+  <rect class="box" x="40" y="132" width="444" height="56" rx="8"/>
+  <text class="h" x="56" y="155">nginx gateway</text>
+  <text class="s" x="56" y="175">service IP · SNI = ZarPayesh host · trusts Shaparak's CA</text>
+  <line class="arrow" x1="262" y1="188" x2="262" y2="210" marker-end="url(#arr)"/>
+
+  <rect class="box" x="40" y="212" width="444" height="228" rx="8"/>
+  <text class="h" x="56" y="235">tunnel container</text>
+  <rect class="row" x="56" y="246" width="412" height="40" rx="6"/>
+  <text class="r" x="70" y="271">NAT · every packet leaves from an address in your /29</text>
+  <rect class="row" x="56" y="294" width="412" height="40" rx="6"/>
+  <text class="r" x="70" y="319">GRE tunnel (/30) · MTU 1300, TCP MSS 1260</text>
+  <rect class="row" x="56" y="342" width="412" height="40" rx="6"/>
+  <text class="r" x="70" y="367">IPsec IKEv1 · ESP in userspace · NAT-T</text>
+  <rect class="row" x="56" y="390" width="412" height="40" rx="6"/>
+  <text class="r" x="70" y="415">OSPF (FRR) · announce /29 · learn service net only</text>
+
+  <line class="arrow" x1="262" y1="452" x2="262" y2="478" marker-end="url(#arr)"/>
+  <text class="n" x="274" y="470">a pod label puts its traffic on the line</text>
+
+  <!-- provider / line -->
+  <rect class="box" x="24" y="480" width="476" height="52" rx="8"/>
+  <text class="h" x="40" y="502">Cloud provider network → MPLS line</text>
+  <text class="s" x="40" y="521">data centre and telecom</text>
+  <line class="arrow" x1="262" y1="532" x2="262" y2="558" marker-end="url(#arr)"/>
+
+  <!-- shaparak -->
+  <rect class="box" x="24" y="560" width="476" height="52" rx="8"/>
+  <text class="h" x="40" y="582">Shaparak edge router</text>
+  <text class="s" x="40" y="601">Cisco · far end of IPsec and GRE · OSPF neighbour</text>
+  <line class="arrow" x1="262" y1="612" x2="262" y2="638" marker-end="url(#arr)"/>
+  <text class="n" x="274" y="630">filtered: your /29 to allowed host:port only</text>
+
+  <rect class="box" x="24" y="640" width="476" height="52" rx="8"/>
+  <text class="h" x="40" y="662">ZarPayesh</text>
+  <text class="s" x="40" y="681">Shaparak's service network · private hostname</text>
+
+  <!-- owners -->
+  <g stroke="#f07a52" stroke-width="1.5" fill="none">
+    <path d="M516 26 H524 V450 H516"/>
+    <path d="M516 482 H524 V530 H516"/>
+    <path d="M516 562 H524 V690 H516"/>
+  </g>
+  <text class="o" x="534" y="242">you</text>
+  <text class="o" x="534" y="502">provider,</text>
+  <text class="o" x="534" y="519">telecom</text>
+  <text class="o" x="534" y="630">Shaparak</text>
+</svg>
