@@ -182,6 +182,33 @@
   font-style: italic;
 }
 
+.prose table {
+  display: block;
+  max-width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  font-size: 0.95rem;
+}
+
+.prose th,
+.prose td {
+  padding: 0.6rem 0.9rem;
+  border-bottom: 1px solid var(--border-light);
+  text-align: start;
+  vertical-align: top;
+}
+
+.prose th {
+  color: var(--ink);
+  font-family: var(--font-display);
+  border-bottom: 2px solid var(--accent);
+}
+
+.prose td {
+  color: var(--ink-soft);
+}
+
 .prose hr {
   border: none;
   border-top: 1px solid var(--border-light);
